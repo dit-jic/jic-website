@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Services - Jinnah Institute of Cardiology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#03396c',
+                        secondary: '#005b96',
+                        accent: '#c0392b',
+                        lightbg: '#f4f7f6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- HEADER (Keep same header as index.html) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="JIC_LOGO.jpg" alt="JIC Logo" class="h-12 w-auto">
+            </a>
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-700">
+                <a href="index.html" class="hover:text-primary">Home</a>
+                <a href="about.html" class="hover:text-primary">About Us</a>
+                <a href="medical-services.html" class="text-primary font-bold">Medical Services</a>
+                <a href="departments.html" class="hover:text-primary">Departments</a>
+                <a href="contact.html" class="hover:text-primary">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        <!-- Page Title Header -->
+        <div class="mb-10 text-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">Specialized Medical Services</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive, state-of-the-art cardiovascular care, diagnostic procedures, and emergency interventions at JIC.</p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Item 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 text-primary flex items-center justify-center rounded-lg mb-4 text-xl">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 mb-2">Interventional Cardiology</h2>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">Advanced diagnostic catheterization, coronary angioplasty, and stent placement performed 24/7 by specialist cardiologists.</p>
+                <a href="#" class="text-primary font-semibold text-sm hover:underline">Learn More &rarr;</a>
+            </div>
+
+            <!-- Service Item 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 text-primary flex items-center justify-center rounded-lg mb-4 text-xl">
+                    <i class="fa-solid fa-bed-pulse"></i>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 mb-2">Cardiac Surgery</h2>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">Minimally invasive and open-heart surgical procedures, including CABG and valve replacements in modular surgical suites.</p>
+                <a href="#" class="text-primary font-semibold text-sm hover:underline">Learn More &rarr;</a>
+            </div>
+
+            <!-- Service Item 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 text-primary flex items-center justify-center rounded-lg mb-4 text-xl">
+                    <i class="fa-solid fa-wave-square"></i>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 mb-2">Non-Invasive Diagnostics</h2>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">Echocardiography, ETT, Holter monitoring, and CT Coronary Angiography utilizing high-precision diagnostic tools.</p>
+                <a href="#" class="text-primary font-semibold text-sm hover:underline">Learn More &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (Keep same footer as index.html) -->
+    <footer class="bg-primary text-white py-8 border-t border-blue-900 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-300">
+            <p>&copy; Jinnah Institute of Cardiology, Lahore. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

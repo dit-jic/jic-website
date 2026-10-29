@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38BDF8 0%, #818CF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-red-700 text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-red-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-red-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="#" class="flex items-center space-x-3 group py-2">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-12 md:h-14 w-auto object-contain transition transform group-hover:scale-105" />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-medium text-slate-700 text-sm">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">Home</a>
+                    <a href="#about" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">About Us</a>
+					<a href="Medical_Services.html" class="hover:text-primary transition-colors">Medical Services</a>
+                    <!--<a  href="#services" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a> -->
+					
+                    <a href="#departments" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="#dean-message" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Dean's Message</a>
+                    <a href="#news" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Announcements</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Contact</a>
+                </nav>
+
+                <!-- Right Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:04299070404" class="bg-jic-navy hover:bg-blue-900 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-phone-volume text-red-400"></i>
+                        <span>Helpline</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="#home" class="block px-3 py-2 rounded-md font-semibold text-jic-blue bg-blue-50">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">About Us</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Medical Services</a>
+            <a href="#departments" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Departments</a>
+            <a href="#dean-message" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Dean's Message</a>
+            <a href="#news" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Announcements</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Contact Us</a>
+            <div class="pt-2 border-t border-slate-100">
+                <a href="tel:04299070404" class="w-full bg-jic-navy text-white text-center font-semibold py-2.5 rounded-lg block">
+                    <i class="fa-solid fa-phone mr-2 text-red-400"></i> Call Emergency (042-99070404)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+	
+	<!-- <section class="relative bg-slate-900 bg-center bg-no-repeat bg-cover py-20 lg:py-28 text-white min-h-[600px] flex items-center" style="background-image: url('Main-2B.png');">
+    <!-- Optional dark gradient overlay to make text easy to read over the image -->
+    <!-- <div class="absolute inset-0 bg-slate-950/50 pointer-events-none"></div>
+
+    <!-- Your section content goes inside here -->
+    <!-- <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+        <!-- Your headline, buttons, or content grid -->
+    </div> 
+</section> 
+	
+   <!--<section id="home" class="hero-bg text-white relative overflow-hidden py-10 lg:py-10"> 
+        <!-- Abstract Background Decorative Circles -->
+    <!-- <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
+         <div class="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-teal-500/10 blur-3xl pointer-events-none"></div> -->
+
+<!-- <section id="home" class="hero-bg text-white relative overflow-hidden py-16 lg:py-24"> 
+        <!-- Abstract Background Decorative Circles -->
+     <!--   <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div> -->
+        <!-- <div class="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-teal-500/10 blur-3xl pointer-events-none"></div> -->
+        <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content 
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- <div class="inline-flex items-center space-x-2 bg-blue-900/60 border border-blue-400/30 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-blue-800 backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span>Premier Government Healthcare Institute</span>
+                    </div> 
+					<br>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        A Healthier Heart for a <span class="gradient-text">Brighter Punjab</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-900 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        A premier public institute for cardiac treatment, research, and medical education—delivering high-quality, modern, and accessible cardiovascular care to every patient.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#services" class="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-blue-600 to-jic-blue hover:from-blue-500 hover:to-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                            <span>Explore Services</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl backdrop-blur-sm transition text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-calendar-check text-blue-300"></i>
+                            <span>OPD Info</span>
+                        </a>
+                    </div> -->
+
+                    <!-- Key Stat Badges Grid -->
+                   <!-- <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-700/60 max-w-xl mx-auto lg:mx-0">
+                        <div class="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/10 text-center">
+                            <div class="text-2xl sm:text-3xl font-black text-blue-400">11+</div>
+                            <div class="text-xs sm:text-sm text-slate-300 font-medium">Specialized Services</div>
+                        </div>
+                        <div class="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/10 text-center">
+                            <div class="text-2xl sm:text-3xl font-black text-emerald-400">06</div>
+                            <div class="text-xs sm:text-sm text-slate-300 font-medium">Core Departments</div>
+                        </div>
+                        <div class="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/10 text-center">
+                            <div class="text-2xl sm:text-3xl font-black text-red-400">24/7</div>
+                            <div class="text-xs sm:text-sm text-slate-300 font-medium">Emergency Care</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Grid (Featured Hospital Image Showcase) -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Main Hero Hospital Campus Image -->
+					
+					<div class="relative w-full rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl bg-slate-900 bg-no-repeat bg-center bg-contain h-[400px] sm:h-[500px] lg:h-[620px]" style="background-image: url('Main-2B.png');">
+    <!-- Optional gradient overlay at the bottom for text readability if needed -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
+</div>
+					
+					<!--<div class="relative rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl bg-slate-900 group flex items-center justify-center">
+    <img src="Main-2.jfif" alt="Jinnah Institute of Cardiology General Entrance Building" class="w-full h-auto max-h-[720px] object-contain object-center transition duration-700 ease-out" />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
+</div>
+					
+                    <!-- <div class="relative rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl group">
+                        <img src="Main-2.jfif" alt="Jinnah Institute of Cardiology Out Patient Department Building" class="w-full h-80 sm:h-70 lg:h-[620px] object-cover object-center transform group-hover:scale-180 transition duration-700 ease-out" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent"></div> -->
+                        
+                        <!-- Image Overlay Badge / Highlights -->
+                        <!--<div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600/80 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                                    <i class="fa-solid fa-hospital"></i>
+                                </div>
+                                <!--<div>
+                                    <h4 class="font-bold text-sm text-white">JIC Out Patient Department</h4>
+                                    <p class="text-[11px] text-slate-200">AIMC Colony, Opposite Jinnah Hospital, Lahore</p>
+                                </div>
+                            </div>
+                            <span class="hidden sm:inline-flex items-center text-[10px] uppercase font-extrabold bg-emerald-500/90 text-white px-2.5 py-1 rounded-full shadow">
+                                State-of-the-Art
+                            </span> -->
+                        </div>
+                    </div>
+
+                    <!-- Mini Decorative Sub-Card Overlay -->
+                    <!--<div class="hidden sm:flex absolute -bottom-6 -left-6 bg-white text-slate-800 p-3.5 rounded-2xl shadow-2xl border border-slate-100 items-center space-x-3 max-w-xs z-20">
+                        <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-heart-circle-check text-xl"></i>
+                        </div>
+                        <div>
+                           <!-- <div class="text-xs font-bold text-slate-900">Advanced OPD Facility</div>
+                            <div class="text-[10px] text-slate-500">Modern cardiac clinics and registration counters</div> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK ACCESS & TIMINGS BAR -->
+    <section class="-mt-8 relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            <!-- 24/7 Emergency Card -->
+            <div class="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-2xl p-6 shadow-xl flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-truck-medical text-2xl text-white"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold tracking-widest uppercase text-red-200">24/7 Service</span>
+                    <h3 class="text-lg font-bold text-white mb-1">Emergency Care</h3>
+                    <p class="text-xs text-red-100 mb-3">Immediate cardiovascular emergency care around the clock.</p>
+                    <a href="tel:04299070404" class="inline-flex items-center text-sm font-extrabold bg-white text-red-700 px-3 py-1.5 rounded-lg shadow hover:bg-red-50 transition">
+                        <i class="fa-solid fa-phone mr-2"></i> 042-99070404
+                    </a>
+                </div>
+            </div>
+
+            <!-- OPD Timings Card -->
+            <div class="bg-white rounded-2xl p-6 shadow-xl border border-slate-200 flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-100 text-jic-blue flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-clock text-2xl"></i>
+                </div>
+                <div class="w-full">
+                    <span class="text-xs font-bold tracking-widest uppercase text-jic-blue">Out Patient Dept</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-1">OPD Schedule</h3>
+                    <div class="text-xs text-slate-600 space-y-1">
+                        <div class="flex justify-between">
+                            <span class="font-medium">Mon - Sat:</span>
+                            <span class="font-semibold text-slate-800">08:00 AM - 03:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-medium">Registration:</span>
+                            <span class="font-semibold text-slate-800">08:00 AM - 02:00 PM</span>
+                        </div>
+                        <div class="flex justify-between text-red-600 font-medium pt-1">
+                            <span>Sun & Holidays:</span>
+                            <span>Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor Directory / Quick Portal -->
+            <div class="bg-gradient-to-br from-jic-navy to-blue-900 text-white rounded-2xl p-6 shadow-xl flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-user-doctor text-2xl text-blue-300"></i>
+                </div>
+                <div class="flex-1">
+                    <span class="text-xs font-bold tracking-widest uppercase text-blue-300">Medical Faculty</span>
+                    <h3 class="text-lg font-bold text-white mb-1">Doctor Directory</h3>
+                    <p class="text-xs text-slate-300 mb-3">Find specialists, cardiologists, and cardiac surgeons.</p>
+                    <a href="#dean-message" class="inline-flex items-center text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-2 rounded-lg transition">
+                        <span>Browse Faculty</span>
+                        <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VISION, MISSION & DEAN MESSAGE SECTION -->
+    <section id="about" class="py-20 bg-slate-100/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold tracking-widest text-jic-blue uppercase bg-blue-100 px-3 py-1 rounded-full">About JIC Lahore</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-3">Committed to Excellence in Cardiac Care</h2>
+                <div class="w-16 h-1 bg-jic-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Vision & Mission Cards Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Vision -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden group hover:shadow-md transition">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-jic-blue flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-eye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Our Vision</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        To become a center of international repute in cardiovascular treatment, research, and education, delivering equitable and state-of-the-art care to patients across Punjab and Pakistan.
+                    </p>
+                </div>
+
+                <!-- Mission -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden group hover:shadow-md transition">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bullseye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Our Mission</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        To provide compassionate, accessible, and high-quality cardiac healthcare while nurturing future healthcare professionals through cutting-edge education, clinical training, and clinical research.
+                    </p>
+                </div>
+            </div>
+
+            <!-- DEAN'S MESSAGE CARD SECTION -->
+            <div id="dean-message" class="bg-white rounded-3xl shadow-xl border border-slate-200/80 overflow-hidden">
+                <div class="grid lg:grid-cols-12 items-stretch">
+                    
+                    <!-- Dean Photo Profile Column -->
+                    <div class="lg:col-span-4 bg-gradient-to-b from-jic-navy to-slate-900 p-8 text-white flex flex-col justify-between items-center text-center relative">
+                        <div class="w-full">
+                            <div class="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
+                                <img src="Dean.png" alt="Dean JIC Lahore" class="w-full h-full object-cover object-top" />
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white">Dr. Hasnat Ahmad Khan</h3>
+                            <p class="text-blue-300 text-sm font-medium mt-1">Dean, Jinnah Institute of Cardiology</p>
+                            <span class="inline-block bg-white/10 px-3 py-1 rounded-full text-xs text-slate-300 mt-3 border border-white/10">MBBS, FCPS, FACC, FSCAI</span>
+                        </div>
+
+                        <!-- <div class="mt-8 pt-6 border-t border-white/10 w-full text-xs text-slate-300">
+                            <p><i class="fa-solid fa-building-columns mr-1 text-blue-400"></i> JIC Leadership Board</p>
+                        </div> -->
+                    </div>
+
+                    <!-- Dean's Message Content -->
+                    <div class="lg:col-span-8 p-8 lg:p-12 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 text-jic-blue mb-4">
+                                <i class="fa-solid fa-quote-left text-3xl opacity-40"></i>
+                                <span class="text-xs font-bold uppercase tracking-widest">Message from the Dean</span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6">
+                                Welcome to Jinnah Institute of Cardiology (JIC), Lahore
+                            </h3>
+
+                            <div class="space-y-4 text-slate-600 text-sm leading-relaxed">
+                                <p>
+                                    Welcome to Jinnah Institute of Cardiology, a center committed to excellence in cardiac patient care, medical education, and innovative cardiovascular research.
+                                </p>
+                                <p>
+                                    Our mission is to provide compassionate, accessible, and state-of-the-art healthcare while developing healthcare professionals through quality clinical education and training. We are dedicated to advancing cardiac services and adopting modern medical practices to continuously improve patient outcomes.
+                                </p>
+                                <p>
+                                    With a strong commitment to professionalism, innovation, and patient-centered care, we look forward to building a healthier future for our community across Punjab.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <div class="font-bold text-slate-900">Dr. Hasnat Ahmad Khan</div>
+                                <div class="text-xs text-slate-500">Dean, JIC Lahore</div>
+                            </div>
+                           <!-- <div class="h-10 w-28 opacity-60 flex items-center justify-end font-serif italic text-slate-400 text-lg">
+                                JIC Director
+                            </div> --> 
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CLINICAL SERVICES GRID SECTION -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold tracking-widest text-jic-blue uppercase bg-blue-100 px-3 py-1 rounded-full">OUR MEDICAL SERVICES</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-3">Comprehensive Cardiac Care</h2>
+                <p class="text-slate-600 text-sm mt-2">Eleven specialized units spanning from prevention to advanced heart transplants.</p>
+                <div class="w-16 h-1 bg-jic-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Services Grid (12 Items) -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <!-- 1. Emergency Care -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-ambulance text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Emergency Services</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">24/7 dedicated acute cardiac emergency care equipped with modern resuscitation protocols.</p>
+                </div>
+
+                <!-- 2. OPD Services -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-jic-blue flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-stethoscope text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Out-Patient Department (OPD)</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Daily specialist consultations, diagnostic screening, and follow-up clinics.</p>
+                </div>
+
+                <!-- 3. Interventional Cardiology -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-heart-circle-bolt text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Interventional Cardiology</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Coronary angiography, primary PCI, complex stenting, and structural interventions.</p>
+                </div>
+
+                <!-- 4. Non-Invasive Cardiology -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wave-square text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Non-Invasive Cardiology</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Echocardiography (2D/3D/TEE), ETT, Holter monitoring, and vascular Doppler.</p>
+                </div>
+
+                <!-- 5. Electrophysiology -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Electrophysiology (EP)</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Diagnosis of cardiac arrhythmias, RF ablation, and pacemaker/ICD implants.</p>
+                </div>
+
+                <!-- 6. Heart Transplant Center -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-red-200 hover:border-red-400 hover:shadow-lg transition group relative overflow-hidden">
+                    <div class="absolute top-2 right-2 bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Special Highlight</div>
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Maryam Nawaz Heart Transplant Center</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Pakistan's premier state-of-the-art heart transplant and advanced heart failure facility.</p>
+                </div>
+
+                <!-- 7. Preventive Cardiology -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-shield-heart text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Preventive Cardiology</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Risk factor management, hypertension, lipid clinics, and cardiac rehabilitation.</p>
+                </div>
+
+                <!-- 8. Adult Cardiac Surgery -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-user-nurse text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Adult Cardiac Surgery</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">CABG (bypass surgery), valve replacements, and aortic root reconstructions.</p>
+                </div>
+
+                <!-- 9. Minimally Invasive Surgery -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-microscope text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Minimally Invasive Cardiac Surgery</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Keyhole heart surgery reducing hospital stay and faster patient recovery.</p>
+                </div>
+
+                <!-- 10. Critical Care Services -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-bed-pulse text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Critical Care Services (CCU/ICU)</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">High-dependency intensive cardiac monitoring units staffed 24/7 by intensivists.</p>
+                </div>
+
+                <!-- 11. Radiology & Imaging -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-x-ray text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Radiology & Imaging</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Cardiac CT Angiography, Cardiac MRI, Digital X-Ray, and Ultrasound services.</p>
+                </div>
+
+                <!-- 12. Pediatric Cardiology -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-child text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Pediatric Cardiology</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Specialized care and interventional support for congenital heart defect patients.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DEPARTMENTS CATEGORIES SECTION -->
+    <section id="departments" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold tracking-widest text-jic-blue uppercase bg-blue-100 px-3 py-1 rounded-full">CLINICAL STRUCTURE</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-3">Departments & Units</h2>
+                <div class="w-16 h-1 bg-jic-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Clinical Departments -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-jic-blue flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-hospital-user text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Clinical Departments</h3>
+                        <p class="text-xs text-slate-600 mb-4">Cardiology, Cardiac Surgery, Anesthesia, & Critical Care Medicine.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-jic-blue hover:text-blue-800">
+                        <span>View All Units</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Diagnostic Departments -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-vial-virus text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Diagnostic Departments</h3>
+                        <p class="text-xs text-slate-600 mb-4">Pathology Lab, Radiology, Cardiac Catheterization Labs, Echocardiography.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-emerald-600 hover:text-emerald-800">
+                        <span>View Diagnostics</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Nursing Department -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-user-nurse text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Nursing Department</h3>
+                        <p class="text-xs text-slate-600 mb-4">Specialized cardiac nursing care, OT techniques, and patient education.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-purple-600 hover:text-purple-800">
+                        <span>Nursing Wing</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Administrative Departments -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-clipboard-list text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Administrative & Support</h3>
+                        <p class="text-xs text-slate-600 mb-4">IT Wing, Medical Records, Finance, Pharmacy, and Bio-Medical Dept.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-amber-600 hover:text-amber-800">
+                        <span>Admin Services</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY / MILESTONES SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-extrabold tracking-widest text-jic-blue uppercase bg-blue-100 px-3 py-1 rounded-full">GALLERY & MEDIA</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-3">Moments & Milestones</h2>
+                </div>
+                <a href="#" class="mt-4 md:mt-0 text-sm font-semibold text-jic-blue hover:underline flex items-center">
+                    <span>View Full Gallery</span>
+                    <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Gallery Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <!-- Gallery 1 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Inauguration JIC Lahore" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <span class="absolute top-3 left-3 bg-jic-navy text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Historic Event</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-jic-blue transition">
+                            CM Maryam Nawaz Sharif Formally Launched JIC Lahore
+                        </h3>
+                        <p class="text-xs text-slate-600 mb-3 line-clamp-2">
+                            A major milestone achieved in public cardiovascular healthcare infrastructure for the people of Punjab.
+                        </p>
+                        <span class="text-xs font-bold text-jic-blue flex items-center">
+                            Read More <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80" alt="Heart Transplant Centre" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Inauguration</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-jic-blue transition">
+                            Inauguration of Pakistan's First Cardiac Heart Transplant Centre
+                        </h3>
+                        <p class="text-xs text-slate-600 mb-3 line-clamp-2">
+                            State-of-the-art facility equipped for complex end-stage heart failure surgical management.
+                        </p>
+                        <span class="text-xs font-bold text-jic-blue flex items-center">
+                            Read More <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Gallery 3 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Cardiology Operation" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Clinical Milestone</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-jic-blue transition">
+                            Advanced Minimally Invasive Cardiac Surgery Protocols
+                        </h3>
+                        <p class="text-xs text-slate-600 mb-3 line-clamp-2">
+                            Implementation of keyhole surgical techniques enabling rapid post-operative recovery times.
+                        </p>
+                        <span class="text-xs font-bold text-jic-blue flex items-center">
+                            Read More <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LATEST NEWS & ANNOUNCEMENTS SECTION -->
+    <section id="news" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold tracking-widest text-jic-blue uppercase bg-blue-100 px-3 py-1 rounded-full">UPDATES</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-3">Latest News & Recruitment Drive</h2>
+                <div class="w-16 h-1 bg-jic-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Announcement 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                            <span class="bg-blue-50 text-jic-blue font-semibold px-2.5 py-1 rounded">Recruitment</span>
+                            <span>September 2026</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Recent Recruitment Drive</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Applications invited for various medical, nursing, and allied health positions offering career opportunities at JIC Lahore.
+                        </p>
+                    </div>
+                    <a href="#" class="text-xs font-bold text-jic-blue hover:underline flex items-center">
+                        <span>Submission Process Details</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Announcement 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                            <span class="bg-emerald-50 text-emerald-600 font-semibold px-2.5 py-1 rounded">Academic</span>
+                            <span>October 2026</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Postgraduate Cardiac Training</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Induction for FCPS fellowship programs in Interventional Cardiology and Cardiac Surgery now open.
+                        </p>
+                    </div>
+                    <a href="#" class="text-xs font-bold text-jic-blue hover:underline flex items-center">
+                        <span>Deadline for Applications</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Announcement 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                            <span class="bg-red-50 text-red-600 font-semibold px-2.5 py-1 rounded">Important Notice</span>
+                            <span>24/7 OPD</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Expanded OPD Registration Desks</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            To facilitate maximum public care, morning OPD registration counters now open at 08:00 AM daily.
+                        </p>
+                    </div>
+                    <a href="#" class="text-xs font-bold text-jic-blue hover:underline flex items-center">
+                        <span>Read Notice</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <footer id="contact" class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-700/80">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 bg-white/95 p-2.5 rounded-xl w-fit">
+                        <img src="JIC_LOGO.jpg" alt="JIC Logo Footer" class="h-10 w-auto object-contain" />
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Jinnah Institute of Cardiology (JIC) is a premier public sector cardiac institute in Lahore dedicated to specialized patient care, research, and medical education.
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-blue-600 transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-blue-400 transition"><i class="fa-brands fa-twitter text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-red-600 transition"><i class="fa-brands fa-youtube text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Medical Services</a></li>
+                        <li><a href="#departments" class="hover:text-white transition">Clinical Departments</a></li>
+                        <li><a href="#dean-message" class="hover:text-white transition">Dean's Office</a></li>
+                        <li><a href="#news" class="hover:text-white transition">Careers & Recruitment</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Doctor Directory</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Core Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-white transition">24/7 Cardiac Emergency</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Interventional Angiography</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Heart Transplant Center</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Adult Cardiac Surgery</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Non-Invasive Diagnostics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Visit or Call Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-red-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Emergency & Helpline:</span>
+                                <a href="tel:04299070404" class="text-white font-bold hover:underline">042-99070404</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-blue-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Address:</span>
+                                <span class="text-slate-200">AIMC Residential Colony, Opposite Jinnah Hospital, Lahore, Punjab, Pakistan</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-clock text-emerald-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">OPD Hours:</span>
+                                <span class="text-slate-200">Mon - Sat (08:00 AM - 03:00 PM)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & IT Dept Credit -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+                <div>
+                    &copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                    <span>Powered by Punjab Information Technology Board / IT Department</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Toggle Mobile Navigation Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a nav link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
