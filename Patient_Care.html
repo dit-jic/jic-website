@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Care - Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-red-700 text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-red-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-red-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="index.html" class="flex items-center space-x-3 group py-2">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-12 md:h-14 w-auto object-contain transition transform group-hover:scale-105" />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-medium text-slate-700 text-sm">
+                    
+					<a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">About Us</a>
+					<a href="Departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="Medical_Services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="Info_Desk.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Info Desk</a>
+                    <a href="Patient_Care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Patient Care</a>
+					
+					<!-- <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about-us.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">About Us</a>
+                    <a href="departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="medical-services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="info-desk.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Info Desk</a>
+                    <a href="patient-care.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">Patient Care</a>
+                    <a href="index.html#news" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Announcements</a>
+                    <a href="index.html#contact" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Contact</a> -->
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:04299070404" class="bg-jic-navy hover:bg-blue-900 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-phone-volume text-red-400"></i>
+                        <span>Helpline</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Home</a>
+            <a href="about-us.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">About Us</a>
+            <a href="departments.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Departments</a>
+            <a href="medical-services.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Medical Services</a>
+            <a href="info-desk.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Info Desk</a>
+            <a href="patient-care.html" class="block px-3 py-2 rounded-md font-semibold text-jic-blue bg-blue-50">Patient Care</a>
+            <a href="index.html#news" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Announcements</a>
+            <a href="index.html#contact" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB HEADER BANNER -->
+    <section class="hero-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight">Patient Care</h1>
+                    <p class="text-blue-200 text-sm mt-1">Admission & Discharge Protocols, Rights & Responsibilities, International Services & Support Units</p>
+                </div>
+                <nav class="text-xs text-blue-200 flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md w-fit">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <span>/</span>
+                    <span class="text-white font-semibold">Patient Care</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SUB-MENU STRIP -->
+    <div class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
+            <div class="flex space-x-6 py-3 text-xs md:text-sm font-semibold whitespace-nowrap">
+                <a href="#admission-discharge" class="text-jic-blue hover:text-blue-800 transition flex items-center space-x-1"><i class="fa-solid fa-hospital-user mr-1"></i> Admission & Discharge</a>
+                <a href="#patient-rights" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-scale-balanced mr-1"></i> Rights & Responsibilities</a>
+                <a href="#international-patients" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-globe mr-1"></i> International Patients</a>
+                <a href="#support-services" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-hand-holding-medical mr-1"></i> Support Services</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTENT GRID -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid lg:grid-cols-12 gap-10">
+            
+            <!-- LEFT NAVIGATION SIDEBAR -->
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-36 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2">
+                    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 border-b pb-2">Patient Care Navigation</h3>
+                    <a href="#admission-discharge" class="block px-3 py-2 rounded-lg text-xs font-semibold text-jic-blue bg-blue-50 border-l-4 border-jic-blue">Admission & Discharge</a>
+                    <a href="#patient-rights" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Rights & Responsibilities</a>
+                    <a href="#international-patients" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">International Patients</a>
+                    <a href="#support-services" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Support Services</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT COLUMNS -->
+            <main class="lg:col-span-9 space-y-16">
+
+                <!-- 1. ADMISSION & DISCHARGE INFORMATION -->
+                <section id="admission-discharge" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Inpatient Care Management</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Admission & Discharge Information</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Admission Policy Card -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
+                            <h3 class="font-bold text-slate-900 text-base flex items-center text-jic-navy">
+                                <i class="fa-solid fa-bed-pulse text-jic-blue mr-2.5 text-lg"></i> Admission Policy
+                            </h3>
+                            <ul class="space-y-2 text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-circle-check text-jic-blue text-xs mt-1"></i>
+                                    <span>All cardiac admissions will be done on doctor's advice after initial assessment in Emergency / OPD.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-circle-check text-jic-blue text-xs mt-1"></i>
+                                    <span>Patient file, ECG, ECHO and relevant investigations must be completed and documented at time of admission.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-circle-check text-jic-blue text-xs mt-1"></i>
+                                    <span>High-risk / emergency cardiac cases (Chest Pain, MI, Arrhythmia) will be admitted on priority basis and informed to on-call consultant immediately.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Discharge Policy Card -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
+                            <h3 class="font-bold text-slate-900 text-base flex items-center text-jic-navy">
+                                <i class="fa-solid fa-file-medical text-jic-blue mr-2.5 text-lg"></i> Discharge Policy
+                            </h3>
+                            <ul class="space-y-2 text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-circle-check text-jic-blue text-xs mt-1"></i>
+                                    <span>Discharge will be made only after consultant's written order and stable vitals.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-circle-check text-jic-blue text-xs mt-1"></i>
+                                    <span>Final diagnosis, discharge summary, prescribed cardiac medicines, diet, and lifestyle instructions must be clearly explained to patient / family.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-circle-check text-jic-blue text-xs mt-1"></i>
+                                    <span>Follow-up date, cardiac rehab, and warning signs (chest pain, dyspnea, swelling) must be explained before discharge, with complete file and documentation.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. PATIENT RIGHTS & RESPONSIBILITIES -->
+                <section id="patient-rights" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Ethical Care Standards</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Patient Rights & Responsibilities</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Patient Rights Card -->
+                        <div class="p-6 rounded-2xl bg-blue-50/60 border border-blue-200 space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 text-jic-blue flex items-center justify-center text-xl font-bold mb-2">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base">Patient Rights</h3>
+                            <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                                Every cardiac patient has the right to receive respectful, timely, and safe care, to be informed about their heart condition and treatment plan, and to give consent after understanding risks and benefits.
+                            </p>
+                        </div>
+
+                        <!-- Patient Responsibilities Card -->
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center text-xl font-bold mb-2">
+                                <i class="fa-solid fa-clipboard-user"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base">Patient Responsibilities</h3>
+                            <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                                The patient is responsible to provide complete medical history, follow prescribed medicines, diet and lifestyle advice, and to inform staff immediately about any chest pain, breathing difficulty or change in condition.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. INTERNATIONAL PATIENTS -->
+                <section id="international-patients" class="scroll-mt-36 bg-gradient-to-br from-blue-900 to-jic-navy text-white rounded-3xl p-8 shadow-md space-y-6">
+                    <div class="border-b border-blue-700/60 pb-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-extrabold text-blue-300 uppercase tracking-widest">Global Healthcare Assistance</span>
+                            <h2 class="text-2xl font-bold text-white mt-1">International Patients</h2>
+                        </div>
+                        <i class="fa-solid fa-earth-asia text-3xl text-blue-300"></i>
+                    </div>
+
+                    <p class="text-blue-100 text-sm md:text-base leading-relaxed">
+                        Jinnah Institute of Cardiology (JIC) offers dedicated, high-quality cardiovascular care to international patients seeking specialized heart treatment in Pakistan. From pre-arrival evaluation to post-discharge care, comprehensive support is provided to ensure a seamless medical journey.
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-4 pt-2">
+                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                            <i class="fa-solid fa-file-medical text-blue-300 text-lg mb-2 block"></i>
+                            <h4 class="font-bold text-sm text-white mb-1">Pre-Arrival Evaluation</h4>
+                            <p class="text-xs text-blue-200">Remote record review and pre-procedure consultation prior to travel.</p>
+                        </div>
+
+                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                            <i class="fa-solid fa-plane-arrival text-blue-300 text-lg mb-2 block"></i>
+                            <h4 class="font-bold text-sm text-white mb-1">Dedicated Coordination</h4>
+                            <p class="text-xs text-blue-200">Fast-track admissions, translation support, and logistics assistance.</p>
+                        </div>
+
+                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                            <i class="fa-solid fa-heart-circle-check text-blue-300 text-lg mb-2 block"></i>
+                            <h4 class="font-bold text-sm text-white mb-1">Post-Discharge Follow-Up</h4>
+                            <p class="text-xs text-blue-200">Tele-consultations and continuity of care after returning home.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. SUPPORT SERVICES -->
+                <section id="support-services" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Operational Excellence</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Support Services</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        JIC Support Services provide the essential operational foundation that ensures safe, efficient, and compassionate patient care across all clinical departments.
+                    </p>
+
+                    <div class="grid md:grid-cols-3 gap-6 pt-2">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-jic-blue transition">
+                            <div class="w-10 h-10 rounded-lg bg-red-100 text-red-700 flex items-center justify-center text-lg font-bold mb-3">
+                                <i class="fa-solid fa-truck-medical"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-sm mb-2">Emergency & OPD Triage</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Initial patient assessment and priority management for acute cardiac emergencies.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-jic-blue transition">
+                            <div class="w-10 h-10 rounded-lg bg-blue-100 text-jic-blue flex items-center justify-center text-lg font-bold mb-3">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-sm mb-2">Cardiac Diagnostics</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                24/7 diagnostic support including ECG, Echocardiography (ECHO), angiography, and cardiac pathology services.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-jic-blue transition">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold mb-3">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-sm mb-2">Pharmacy & Therapeutics</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provision of cardiac medications alongside clear administration and safety guidance.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-700/80">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 bg-white/95 p-2.5 rounded-xl w-fit">
+                        <img src="JIC_LOGO.jpg" alt="JIC Logo Footer" class="h-10 w-auto object-contain" />
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Jinnah Institute of Cardiology (JIC) is a premier public sector cardiac institute in Lahore dedicated to specialized patient care, research, and medical education.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="departments.html" class="hover:text-white transition">Departments</a></li>
+                        <li><a href="medical-services.html" class="hover:text-white transition">Medical Services</a></li>
+                        <li><a href="info-desk.html" class="hover:text-white transition">Info Desk</a></li>
+                        <li><a href="patient-care.html" class="hover:text-white transition">Patient Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Core Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="medical-services.html#emergency-services" class="hover:text-white transition">24/7 Cardiac Emergency</a></li>
+                        <li><a href="medical-services.html#interventional-cardiology" class="hover:text-white transition">Interventional Angiography</a></li>
+                        <li><a href="medical-services.html#transplant-center" class="hover:text-white transition">Heart Transplant Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Visit or Call Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-red-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Emergency & Helpline:</span>
+                                <a href="tel:04299070404" class="text-white font-bold hover:underline">042-99070404</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+                <div>&copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                    <span>Powered by IT Department - JIC Lahore</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+```
+
+### Key Sections Included:
+1. **Admission & Discharge Information (`#admission-discharge`):** Complete Admission Policy and Discharge Policy details.
+2. **Patient Rights & Responsibilities (`#patient-rights`):** Structured side-by-side card layouts for Rights vs. Responsibilities.
+3. **International Patients (`#international-patients`):** Highlighting global medical tourism and patient support.
+4. **Support Services (`#support-services`):** Triage, 24/7 Diagnostics, and Pharmacy & Therapeutics.

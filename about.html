@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-red-700 text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-red-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-red-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="index.html" class="flex items-center space-x-3 group py-2">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-12 md:h-14 w-auto object-contain transition transform group-hover:scale-105" />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-medium text-slate-700 text-sm">
+                    <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">About Us</a>
+					
+					<a href="Departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="Medical_Services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="Info_Desk.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Info Desk</a>
+                    <a href="Patient_Care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Patient Care</a>
+					
+                   <!-- <a href="index.html#departments" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="index.html#services" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="index.html#news" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Announcements</a>
+                    <a href="index.html#contact" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Contact</a> -->
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:04299070404" class="bg-jic-navy hover:bg-blue-900 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-phone-volume text-red-400"></i>
+                        <span>Helpline</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Home</a>
+            <a href="about-us.html" class="block px-3 py-2 rounded-md font-semibold text-jic-blue bg-blue-50">About Us</a>
+            <a href="index.html#departments" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Departments</a>
+            <a href="index.html#services" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Medical Services</a>
+            <a href="index.html#news" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Announcements</a>
+            <a href="index.html#contact" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB HEADER BANNER -->
+    <section class="hero-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight">About Us</h1>
+                    <p class="text-blue-200 text-sm mt-1">Institutional Profile, Vision, Leadership, & Governance</p>
+                </div>
+                <nav class="text-xs text-blue-200 flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md w-fit">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <span>/</span>
+                    <span class="text-white font-semibold">About Us</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SUB-MENU STRIP -->
+    <div class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
+            <div class="flex space-x-6 py-3 text-xs md:text-sm font-semibold whitespace-nowrap">
+                <a href="#overview" class="text-jic-blue hover:text-blue-800 transition flex items-center space-x-1"><i class="fa-solid fa-circle-info mr-1"></i> Overview</a>
+                <a href="#message-from-dean" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-quote-left mr-1"></i> Dean's Message</a>
+                <a href="#board-of-governors" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-landmark mr-1"></i> Board of Governors</a>
+                <a href="#core-team" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-users-gear mr-1"></i> Core Team</a>
+                <a href="#our-consultants" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-user-md mr-1"></i> Our Consultants</a>
+                <a href="#organogram" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-sitemap mr-1"></i> Organogram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTENT GRID -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid lg:grid-cols-12 gap-10">
+            
+            <!-- LEFT NAVIGATION SIDEBAR -->
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-36 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2">
+                    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 border-b pb-2">About Section</h3>
+                    <a href="#overview" class="block px-3 py-2 rounded-lg text-xs font-semibold text-jic-blue bg-blue-50 border-l-4 border-jic-blue">Overview & Background</a>
+                    <a href="#message-from-dean" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Message from the Dean</a>
+                    <a href="#board-of-governors" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Board of Governors</a>
+                    <a href="#core-team" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Core Team</a>
+                    <a href="#our-consultants" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Our Consultants</a>
+                    <a href="#organogram" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Organogram</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT COLUMNS -->
+            <main class="lg:col-span-9 space-y-16">
+
+                <!-- 1. OVERVIEW, VISION, MISSION & BACKGROUND -->
+                <section id="overview" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Institutional Profile</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Overview</h2>
+                    </div>
+
+                    <!-- Vision & Mission Cards Grid -->
+                    <div class="grid md:grid-cols-2 gap-6 my-6">
+                        <div class="bg-blue-50/60 p-6 rounded-2xl border border-blue-100">
+                            <div class="w-10 h-10 rounded-xl bg-jic-blue text-white flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-eye text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Vision</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                To be Pakistan's and the region's leading centre of excellence in cardiac care, where innovation in heart transplantation and advanced cardiology saves lives, advances medical knowledge and inspires hope, ensuring that no patient in Pakistan has to travel abroad for the heart care they deserve.
+                            </p>
+                        </div>
+
+                        <div class="bg-emerald-50/60 p-6 rounded-2xl border border-emerald-100">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-bullseye text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Mission</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                To establish Jinnah Institute of Cardiology as a center of excellence in cardiovascular care, including advanced cardiac interventions and transplantation, with a commitment to patient safety, clinical excellence and innovation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Background & Establishment</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                            Jinnah Institute of Cardiology (JIC), Lahore was established to strengthen specialized cardiac healthcare services and address the growing need for advanced cardiovascular treatment in Lahore and surrounding districts.
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                            The institute was developed as a modern, comprehensive cardiac care facility equipped with advanced diagnostic, interventional, surgical, emergency, and critical care services. Its establishment reflects a commitment to expanding access to quality cardiac healthcare, particularly for patients requiring timely and specialized treatment.
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Jinnah Institute of Cardiology aims to serve as a center of excellence in cardiovascular care, combining modern medical technology, skilled healthcare professionals, patient-centered services, medical education, and continuous improvement in cardiac treatment and management.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 2. MESSAGE FROM THE DEAN -->
+                <section id="message-from-dean" class="scroll-mt-36 bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="bg-gradient-to-r from-jic-navy to-blue-900 p-8 text-white">
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <img src="Dean.png" alt="Dr. Hasnat Ahmad Khan" class="w-32 h-32 rounded-2xl object-cover object-top border-4 border-white/20 shadow-lg shrink-0">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-blue-300 font-semibold">Leadership Message</span>
+                                <h2 class="text-2xl font-bold mt-1">Message from the Dean</h2>
+                                <h3 class="text-lg font-semibold text-blue-200 mt-1">Dr. Hasnat Ahmad Khan</h3>
+                                <p class="text-xs text-blue-300">Dean, Jinnah Institute of Cardiology</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8 space-y-4 text-slate-600 text-sm leading-relaxed">
+                        <p>
+                            Welcome to Jinnah Institute of Cardiology, a center committed to excellence in cardiac care, education, research, and innovation.
+                        </p>
+                        <p>
+                            Our mission is to provide compassionate, accessible, and state-of-the-art cardiac healthcare while developing skilled healthcare professionals through quality education and training. We are dedicated to advancing cardiac services and adopting modern medical practices to improve patient outcomes.
+                        </p>
+                        <p>
+                            With a strong commitment to professionalism, teamwork, and patient-centered care, we look forward to building a healthier future for our community.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100">
+                            <div class="font-bold text-slate-900 text-base">Dr. Hasnat Ahmad Khan</div>
+                            <div class="text-xs text-slate-500">Dean, Jinnah Institute of Cardiology</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. BOARD OF GOVERNORS -->
+                <section id="board-of-governors" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Governance & Oversight</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">BOG Members</h2>
+                </div>
+
+                <!-- Chairman Card Highlight -->
+                <div class="bg-blue-50/80 p-6 rounded-2xl border border-blue-200 flex items-start space-x-4">
+                    <span class="font-extrabold text-jic-blue text-lg">1)</span>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg">Dr. Farqad Alamgir</h3>
+                        <p class="text-xs font-semibold text-jic-blue">Chairman, Board of Governors, Jinnah Institute of Cardiology, Lahore</p>
+                    </div>
+                </div>
+
+                <!-- Additional Board Members Grid -->
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">2)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Mr. Irfan Ali</h4>
+                            <p class="text-xs text-slate-500">Member</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">3)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Dr. Zubair Akram</h4>
+                            <p class="text-xs text-slate-500">Member</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">4)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Mr. Asad Ali Khan</h4>
+                            <p class="text-xs text-slate-500">Member</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">5)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Mrs. Parveen Qadir Agha</h4>
+                            <p class="text-xs text-slate-500">Member</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">6)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Secretary to the Government</h4>
+                            <p class="text-xs text-slate-500">Specialized Healthcare and Medical Education Department</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">7)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Secretary to the Government</h4>
+                            <p class="text-xs text-slate-500">Finance Department</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">8)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Secretary to the Government</h4>
+                            <p class="text-xs text-slate-500">Planning & Development Board</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">9)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Secretary to the Government</h4>
+                            <p class="text-xs text-slate-500">Law & Parliamentary Affairs Department</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">10)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Dr. Hasnaat Ahmad Khan</h4>
+                            <p class="text-xs text-slate-500">Dean, Jinnah Institute of Cardiology, Lahore</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">11)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Col. (Retd) Dr. Sabrina Jamil</h4>
+                            <p class="text-xs text-slate-500">Hospital Director, Jinnah Institute of Cardiology, Lahore</p>
+                        </div>
+                    </div>
+
+                    <!-- 12 & 13 explicitly placed in same grid row -->
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">12)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Dr. Adnan Khan (Co-Opted)</h4>
+                            <p class="text-xs text-slate-500">Health Economist</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-sm">13)</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Dr. Muhammad Waseem (Co-Opted)</h4>
+                            <p class="text-xs text-slate-500">Additional Secretary (Technical), SHC&ME Lahore</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. CORE TEAM -->
+            <section id="core-team" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Administrative Leadership</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-1">Core Team</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">1)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Hasnaat Ahmad Khan</h3>
+                            <p class="text-xs text-slate-500">Dean, Jinnah Institute of Cardiology, Lahore</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">2)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Col (Retd) Dr Sabrina Jamil</h3>
+                            <p class="text-xs text-slate-500">Hospital Director, Jinnah Institute of Cardiology, Lahore</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">3)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Muhammad Saad Khan</h3>
+                            <p class="text-xs text-slate-500">Director Finance</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">4)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Muhammad Umer Asif</h3>
+                            <p class="text-xs text-slate-500">Director HR</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">5)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Faisal Amin</h3>
+                            <p class="text-xs text-slate-500">IT Director</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. OUR CONSULTANTS -->
+            <section id="our-consultants" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Medical Faculty</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-1">Our Consultants</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">1)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Imran Khan</h3>
+                            <p class="text-xs text-slate-500">Senior Consultant Cardiac Surgery</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">2)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Kaleem Ahmad</h3>
+                            <p class="text-xs text-slate-500">Senior Consultant Cardiac Anaesthesia</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">3)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Sheikh Muhammad Ahmed Tariq</h3>
+                            <p class="text-xs text-slate-500">Senior Consultant Cardiac Anaesthesia</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">4)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Syeda Atiqa Batul</h3>
+                            <p class="text-xs text-slate-500">Senior Consultant Cardiac EP</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">5)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Waseem Sajjad</h3>
+                            <p class="text-xs text-slate-500">Senior Consultant Cardiac EP</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">6)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Muhammad Muezz ud Din</h3>
+                            <p class="text-xs text-slate-500">Senior Consultant Interventional Cardiologist</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">7)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Tahira Sadiq</h3>
+                            <p class="text-xs text-slate-500">Consultant Interventional Cardiology</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">8)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Hamza Iqbal</h3>
+                            <p class="text-xs text-slate-500">Consultant Cardiac Surgery</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">9)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Waqas Khalid</h3>
+                            <p class="text-xs text-slate-500">Consultant Cardiac Surgery</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">10)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Khawar Naeem Satti</h3>
+                            <p class="text-xs text-slate-500">Consultant Interventional Cardiology</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">11)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Sidra Liaqat</h3>
+                            <p class="text-xs text-slate-500">Consultant Pathology</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                        <span class="font-bold text-jic-blue text-xs">12)</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Dr. Saima Rasheed Khan</h3>
+                            <p class="text-xs text-slate-500">Consultant Heart Failure & Devices</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. ORGANOGRAM -->
+            <section id="organogram" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Institutional Hierarchy</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-1">Organogram</h2>
+                </div>
+
+                <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                    The organizational structure of Jinnah Institute of Cardiology (JIC), Lahore is designed to ensure effective leadership, efficient administration, coordinated clinical services, and quality patient care.
+                </p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                    The organogram defines the roles, responsibilities, reporting lines, and coordination among clinical, administrative, nursing, technical, and support departments.
+                </p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    This structured hierarchy promotes teamwork, accountability, transparency, and efficient decision-making across the institute, supporting the delivery of comprehensive and patient-centered cardiac healthcare services.
+                </p>
+            </section>
+
+        </main>
+    </div>
+</div>
+
+<!-- FOOTER SECTION -->
+<footer id="contact" class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-700/80">
+            
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3 bg-white/95 p-2.5 rounded-xl w-fit">
+                    <img src="JIC_LOGO.jpg" alt="JIC Logo Footer" class="h-10 w-auto object-contain" />
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Jinnah Institute of Cardiology (JIC) is a premier public sector cardiac institute in Lahore dedicated to specialized patient care, research, and medical education.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Quick Links</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="index.html#services" class="hover:text-white transition">Medical Services</a></li>
+                    <li><a href="index.html#departments" class="hover:text-white transition">Clinical Departments</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Core Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html#services" class="hover:text-white transition">24/7 Cardiac Emergency</a></li>
+                    <li><a href="index.html#services" class="hover:text-white transition">Interventional Angiography</a></li>
+                    <li><a href="index.html#services" class="hover:text-white transition">Heart Transplant Center</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Visit or Call Us</h4>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-start space-x-3">
+                        <i class="fa-solid fa-phone text-red-400 mt-0.5"></i>
+                        <div>
+                            <span class="block text-slate-400">Emergency & Helpline:</span>
+                            <a href="tel:04299070404" class="text-white font-bold hover:underline">042-99070404</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+            <div>&copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.</div>
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                <span>Powered by IT Department - JIC Lahore</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- INTERACTIVE JAVASCRIPT LOGIC -->
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

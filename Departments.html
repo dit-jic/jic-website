@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-red-700 text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-red-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-red-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="index.html" class="flex items-center space-x-3 group py-2">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-12 md:h-14 w-auto object-contain transition transform group-hover:scale-105" />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-medium text-slate-700 text-sm">
+				
+					<a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">About Us</a>
+					<a href="Departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="Medical_Services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="Info_Desk.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Info Desk</a>
+                    <a href="Patient_Care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Patient Care</a>
+                   
+<!--				   <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about-us.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">About Us</a>
+                    <a href="departments.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">Departments</a>
+                    <a href="index.html#services" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="index.html#news" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Announcements</a>
+                    <a href="index.html#contact" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Contact</a> -->
+					
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:04299070404" class="bg-jic-navy hover:bg-blue-900 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-phone-volume text-red-400"></i>
+                        <span>Helpline</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Home</a>
+            <a href="about-us.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">About Us</a>
+            <a href="departments.html" class="block px-3 py-2 rounded-md font-semibold text-jic-blue bg-blue-50">Departments</a>
+            <a href="index.html#services" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Medical Services</a>
+            <a href="index.html#news" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Announcements</a>
+            <a href="index.html#contact" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB HEADER BANNER -->
+    <section class="hero-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight">Departments</h1>
+                    <p class="text-blue-200 text-sm mt-1">Clinical Specialties, Diagnostic Imaging, Critical Care & Administrative Wings</p>
+                </div>
+                <nav class="text-xs text-blue-200 flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md w-fit">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <span>/</span>
+                    <span class="text-white font-semibold">Departments</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SUB-MENU STRIP -->
+    <div class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
+            <div class="flex space-x-6 py-3 text-xs md:text-sm font-semibold whitespace-nowrap">
+                <a href="#clinical-departments" class="text-jic-blue hover:text-blue-800 transition flex items-center space-x-1"><i class="fa-solid fa-heart-pulse mr-1"></i> Clinical</a>
+                <a href="#radiology-imaging" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-x-ray mr-1"></i> Radiology & Pathology</a>
+                <a href="#nursing-department" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-user-nurse mr-1"></i> Nursing</a>
+                <a href="#infection-control" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-shield-virus mr-1"></i> Infection Control</a>
+                <a href="#cssd" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-pump-medical mr-1"></i> CSSD</a>
+                <a href="#admin-support" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-briefcase mr-1"></i> Admin & Support</a>
+                <a href="#critical-care-services" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-bed-pulse mr-1"></i> Critical Care</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTENT GRID -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid lg:grid-cols-12 gap-10">
+            
+            <!-- LEFT NAVIGATION SIDEBAR -->
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-36 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2">
+                    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 border-b pb-2">Departments Navigation</h3>
+                    <a href="#clinical-departments" class="block px-3 py-2 rounded-lg text-xs font-semibold text-jic-blue bg-blue-50 border-l-4 border-jic-blue">Clinical Departments</a>
+                    <a href="#radiology-imaging" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Radiology & Pathology</a>
+                    <a href="#nursing-department" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Nursing Department</a>
+                    <a href="#infection-control" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Infection Control</a>
+                    <a href="#cssd" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">CSSD</a>
+                    <a href="#admin-support" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Administrative & Support</a>
+                    <a href="#critical-care-services" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Critical Care Services</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT COLUMNS -->
+            <main class="lg:col-span-9 space-y-16">
+
+                <!-- 1. CLINICAL DEPARTMENTS -->
+                <section id="clinical-departments" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Medical Excellence</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Clinical Departments</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Cardiology -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-jic-blue flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-heart-pulse text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Cardiology</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides comprehensive diagnosis, medical management, and specialized treatment for patients with cardiovascular diseases.
+                            </p>
+                        </div>
+
+                        <!-- Cardiac Surgery -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-user-nurse text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Cardiac Surgery</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides specialized surgical treatment for complex heart conditions, with a focus on safe and effective cardiac procedures.
+                            </p>
+                        </div>
+
+                        <!-- Critical Care -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition">
+                            <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-bed-pulse text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Critical Care</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides specialized intensive care and continuous monitoring for critically ill cardiac patients requiring advanced medical support.
+                            </p>
+                        </div>
+
+                        <!-- Heart Transplant Centre -->
+                        <div class="p-5 rounded-2xl bg-red-50/60 border border-red-200 hover:border-red-300 transition">
+                            <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-hand-holding-heart text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Heart Transplant Centre</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides specialized evaluation, management, and multidisciplinary care for patients requiring advanced heart failure and heart transplantation services.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. RADIOLOGY & IMAGING / PATHOLOGY -->
+                <section id="radiology-imaging" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Diagnostic Specialties</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Radiology & Imaging</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Provides advanced imaging services to support accurate diagnosis, treatment planning, and monitoring of cardiac and other medical conditions.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                        <!-- Echocardiography -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-wave-square text-jic-blue mr-1.5"></i> Echocardiography</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides comprehensive ultrasound-based cardiac assessment to evaluate heart structure, function, and blood flow.
+                            </p>
+                        </div>
+
+                        <!-- Exercise Tolerance Test -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-person-running text-jic-blue mr-1.5"></i> Exercise Tolerance Test (ETT)</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Assesses cardiac performance during controlled physical activity to help evaluate heart function and detect exercise-related cardiac conditions.
+                            </p>
+                        </div>
+
+                        <!-- Cardiac MRI -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-magnet text-jic-blue mr-1.5"></i> Cardiac MRI</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides detailed, non-invasive imaging of the heart and cardiovascular structures for advanced diagnosis and treatment planning.
+                            </p>
+                        </div>
+
+                        <!-- CT / CT Angiography -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-circle-dot text-jic-blue mr-1.5"></i> CT / CT Angiography</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides high-resolution imaging of the heart and blood vessels to support the diagnosis and assessment of cardiovascular conditions.
+                            </p>
+                        </div>
+
+                        <!-- Gamma Camera -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-camera-retro text-jic-blue mr-1.5"></i> Gamma Camera</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides nuclear imaging services to assess cardiac function and blood flow and support the diagnosis of cardiovascular conditions.
+                            </p>
+                        </div>
+
+                        <!-- Pathology & Laboratory -->
+                        <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-vial-virus text-emerald-600 mr-1.5"></i> Pathology & Laboratory</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides essential laboratory and diagnostic testing to support accurate diagnosis, treatment, and monitoring of patients.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. NURSING DEPARTMENT -->
+                <section id="nursing-department" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Patient-Centered Care</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Nursing Department</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The Nursing Department serves as the backbone of patient care, delivering round-the-clock professional and compassionate medical support. Nurses bridge the gap between physicians, patients, and families to ensure seamless care across every stage of treatment.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-stethoscope mr-1"></i> Diagnostic Support</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Administering preliminary assessments, recording vital signs, preparing patients for diagnostic testing, and monitoring medical status.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-pills mr-1"></i> Treatment & Medication</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Managing prescribed medication schedules, administering intravenous therapies, and supporting physician-led medical interventions.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-heart-pulse mr-1"></i> Recovery & Monitoring</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Providing post-operative care, continuous vital sign tracking, pain management, and wound care.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-graduation-cap mr-1"></i> Rehabilitation & Education</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Educating patients and families on post-discharge care, medication compliance, mobility exercises, and lifestyle adjustments.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. INFECTION CONTROL -->
+                <section id="infection-control" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Quality & Safety</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Infection Control</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The Infection Control Department enforces strict hygiene protocols and disease surveillance to minimize healthcare-associated infections (HAIs), safeguarding patients, clinical staff, and visitors.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-hands-bubbles text-emerald-600 mr-1.5"></i> Standard Precautions & Hand Hygiene</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Monitoring hand hygiene compliance, personal protective equipment (PPE) usage, and respiratory etiquette across all wards and intensive care units.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-pump-medical text-emerald-600 mr-1.5"></i> Sterilization & Disinfection (CSSD)</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Overseeing Central Sterile Services Department operations for thermal/chemical sterilization of surgical instruments, catheterization kits, and invasive equipment.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-pump-soap text-emerald-600 mr-1.5"></i> Environmental Hygiene & Waste Management</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Managing bio-hazardous healthcare waste segregation, surface disinfection routines, and cleanroom air quality standards.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-microscope text-emerald-600 mr-1.5"></i> Surveillance & Outbreak Response</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Tracking hospital-acquired infection trends, surgical site infection rates, multidrug-resistant organism screening, and rapid isolation protocols.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. CENTRAL STERILE & SUPPLY DEPARTMENT (CSSD) -->
+                <section id="cssd" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Sterile Operational Hub</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Central Sterile & Supply Department (CSSD)</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The Central Sterile Supply Department (CSSD) serves as the core operational hub for infection control and surgical safety, providing processed and verified sterile medical instruments, linen, and specialized surgical equipment across all operating theaters, catheterization labs, and critical care units.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-shower text-blue-600 mr-1.5"></i> Decontamination & Cleaning</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Automated ultrasonic cleaning, manual thermal disinfection, and enzymatic wash cycles to remove bioburden from surgical instruments.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-magnifying-glass text-blue-600 mr-1.5"></i> Inspection & Assembly</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Rigorous quality checking under magnification for functional integrity, rust detection, precise set packing, and chemical indicator placement.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-temperature-arrow-up text-blue-600 mr-1.5"></i> Sterilization Protocols</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                High-pressure steam autoclaving, low-temperature hydrogen peroxide gas plasma for heat-sensitive optics, and biological indicator validation.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-boxes-packing text-blue-600 mr-1.5"></i> Storage & Inventory Distribution</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Climate-controlled HEPA-filtered cleanroom storage, strict first-in/first-out (FIFO) stock management, and tracking delivery systems for clinical wards and ORs.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. ADMINISTRATIVE & SUPPORT DEPARTMENTS -->
+                <section id="admin-support" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Operational Support</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Administrative & Support Departments</h2>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- HR -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-users text-amber-600 mr-1.5"></i> Human Resource</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Manages workforce planning, recruitment, employee development, and staff-related services to support an efficient healthcare workforce.
+                            </p>
+                        </div>
+
+                        <!-- Finance -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-coins text-amber-600 mr-1.5"></i> Finance</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Manages financial planning, budgeting, accounting, and financial operations to ensure effective utilization of institutional resources.
+                            </p>
+                        </div>
+
+                        <!-- Procurement -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-cart-flatbed text-amber-600 mr-1.5"></i> Procurement</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Ensures the timely and transparent procurement of medical equipment, supplies, medicines, and other essential resources.
+                            </p>
+                        </div>
+
+                        <!-- IT -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-laptop-code text-amber-600 mr-1.5"></i> Information Technology</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Supports the institute through reliable IT infrastructure, digital healthcare systems, data management, and technology-enabled services.
+                            </p>
+                        </div>
+
+                        <!-- Security -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-shield-halved text-amber-600 mr-1.5"></i> Security</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Maintains a secure and safe environment for patients, visitors, healthcare professionals, and institutional assets.
+                            </p>
+                        </div>
+
+                        <!-- Janitorial -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-broom text-amber-600 mr-1.5"></i> Janitorial</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Maintains cleanliness, hygiene, and environmental standards across the institute to support a safe and comfortable healthcare environment.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. CRITICAL CARE SERVICES -->
+                <section id="critical-care-services" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Acute Interventions & Rehabilitation</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Critical Care Services</h2>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- CCU -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-heart-pulse text-red-600 mr-1.5"></i> Cardiac Care Unit (CCU)</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides specialized monitoring and treatment for patients with serious or acute cardiac conditions requiring continuous care.
+                            </p>
+                        </div>
+
+                        <!-- ICU -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-bed-pulse text-red-600 mr-1.5"></i> Intensive Care Unit (ICU)</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides advanced critical care and continuous monitoring for patients requiring intensive medical support.
+                            </p>
+                        </div>
+
+                        <!-- CSICU -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-user-doctor text-red-600 mr-1.5"></i> Cardiac Surgical ICU</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides specialized post-operative critical care for patients recovering from cardiac surgery.
+                            </p>
+                        </div>
+
+                        <!-- Cardiac Rehab -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-child-reaching text-red-600 mr-1.5"></i> Cardiac Rehabilitation</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Supports patients in recovery after cardiac events or procedures through supervised rehabilitation, education, and lifestyle guidance.
+                            </p>
+                        </div>
+
+                        <!-- Physiotherapy -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-person-walking-rebound text-red-600 mr-1.5"></i> Physiotherapy</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Provides specialized physical therapy to support recovery, mobility, functional improvement, and rehabilitation of cardiac patients.
+                            </p>
+                        </div>
+
+                        <!-- Pharmacy Services -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-prescription-bottle-medical text-red-600 mr-1.5"></i> Pharmacy Services</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Ensures safe and timely access to prescribed medicines while supporting patients with medication-related guidance and care.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-700/80">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 bg-white/95 p-2.5 rounded-xl w-fit">
+                        <img src="JIC_LOGO.jpg" alt="JIC Logo Footer" class="h-10 w-auto object-contain" />
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Jinnah Institute of Cardiology (JIC) is a premier public sector cardiac institute in Lahore dedicated to specialized patient care, research, and medical education.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="departments.html" class="hover:text-white transition">Departments</a></li>
+                        <li><a href="index.html#services" class="hover:text-white transition">Medical Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Core Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html#services" class="hover:text-white transition">24/7 Cardiac Emergency</a></li>
+                        <li><a href="index.html#services" class="hover:text-white transition">Interventional Angiography</a></li>
+                        <li><a href="index.html#services" class="hover:text-white transition">Heart Transplant Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Visit or Call Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-red-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Emergency & Helpline:</span>
+                                <a href="tel:04299070404" class="text-white font-bold hover:underline">042-99070404</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+                <div>&copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                    <span>Powered by IT Department - JIC Lahore</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
