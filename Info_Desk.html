@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Desk - Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-red-700 text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-red-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-red-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="index.html" class="flex items-center space-x-3 group py-2">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-12 md:h-14 w-auto object-contain transition transform group-hover:scale-105" />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-medium text-slate-700 text-sm">
+                    <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">About Us</a>
+                    <a href="Departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="Medical_Services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="Info_Desk.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">Info Desk</a>
+                    <a href="Patient_Care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Patient Care</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:04299070404" class="bg-jic-navy hover:bg-blue-900 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-phone-volume text-red-400"></i>
+                        <span>Helpline</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB HEADER BANNER -->
+    <section class="hero-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight">Info Desk</h1>
+                    <p class="text-blue-200 text-sm mt-1">Schedules, Emergency Guidance, Faculty Directory & Downloads</p>
+                </div>
+                <nav class="text-xs text-blue-200 flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md w-fit">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <span>/</span>
+                    <span class="text-white font-semibold">Info Desk</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SUB-MENU STRIP -->
+    <div class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
+            <div class="flex space-x-6 py-3 text-xs md:text-sm font-semibold whitespace-nowrap">
+                <a href="#opd-schedule" class="text-jic-blue hover:text-blue-800 transition flex items-center space-x-1"><i class="fa-solid fa-calendar-check mr-1"></i> OPD Schedule</a>
+                <a href="#emergency-info" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-truck-medical mr-1"></i> Emergency Information</a>
+                <a href="#doctors-consultants" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-user-md mr-1"></i> Doctors/Consultants</a>
+                <a href="#downloads" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-file-arrow-down mr-1"></i> Downloads</a>
+                <a href="#useful-links" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-link mr-1"></i> Useful Links</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTENT GRID -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid lg:grid-cols-12 gap-10">
+            
+            <!-- LEFT NAVIGATION SIDEBAR -->
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-36 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2">
+                    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 border-b pb-2">Info Desk Navigation</h3>
+                    <a href="#opd-schedule" class="block px-3 py-2 rounded-lg text-xs font-semibold text-jic-blue bg-blue-50 border-l-4 border-jic-blue">OPD Schedule</a>
+                    <a href="#emergency-info" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Emergency Information</a>
+                    <a href="#doctors-consultants" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Doctors / Consultants</a>
+                    <a href="#downloads" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Downloads</a>
+                    <a href="#useful-links" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Useful Links</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT COLUMNS -->
+            <main class="lg:col-span-9 space-y-16">
+
+                <!-- 1. OPD SCHEDULE -->
+                <section id="opd-schedule" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Outpatient Services</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">OPD Schedule</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The Outpatient Department (OPD) at JIC operates on a structured schedule to ensure timely consultation, physical queue management, and streamlined E-prescriptions.
+                    </p>
+
+                    <div class="bg-blue-50/70 border border-blue-200 rounded-2xl p-6 space-y-4">
+                        <h3 class="font-bold text-slate-900 text-base flex items-center text-jic-blue">
+                            <i class="fa-solid fa-clock mr-2"></i> General OPD Timings
+                        </h3>
+                        <div class="grid sm:grid-cols-2 gap-4 text-xs md:text-sm">
+                            <div class="bg-white p-4 rounded-xl border border-blue-100 shadow-2xs">
+                                <span class="block text-slate-500 font-medium">Operating Days & Hours:</span>
+                                <span class="block font-bold text-slate-800 mt-1">Monday to Saturday: 08:00 AM – 03:00 PM</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-blue-100 shadow-2xs">
+                                <span class="block text-slate-500 font-medium">Registration Desk Hours:</span>
+                                <span class="block font-bold text-slate-800 mt-1">08:00 AM – 03:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-white rounded-xl border border-red-100 text-xs text-red-700 font-semibold flex items-center">
+                            <i class="fa-solid fa-triangle-exclamation mr-2 text-base"></i>
+                            <span>Sunday & Public Holidays: Closed (Emergency services remain fully operational 24/7)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. EMERGENCY INFORMATION -->
+                <section id="emergency-info" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-red-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-extrabold text-red-600 uppercase tracking-widest">24/7 Critical Response</span>
+                            <h2 class="text-2xl font-bold text-slate-900 mt-1">Emergency Information</h2>
+                        </div>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700">
+                            <i class="fa-solid fa-truck-medical mr-1"></i> Always Active
+                        </span>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The JIC Emergency Department operates 24 hours a day, 7 days a week, delivering rapid intervention for critical cardiac emergencies.
+                    </p>
+
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-slate-900 text-base text-red-700">Emergency Services & Features</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-heart-pulse mr-1"></i> Immediate Triage</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Instant triage classification for patients presenting with severe chest pain, dyspnea, or cardiac arrest.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-bed-pulse mr-1"></i> Dedicated Critical Care Units</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    On-site Cardiac Care Unit (CCU) and Intensive Care Units equipped with advanced life support and monitoring technology.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-vial-circle-check mr-1"></i> Round-the-Clock Diagnostics</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Immediate access to emergency ECG, bed-side echocardiography, cardiac biomarker testing, and emergency resuscitation teams.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. DOCTORS / CONSULTANTS -->
+                <section id="doctors-consultants" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Medical Directory</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Our Consultants</h2>
+                    </div>
+
+                    <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">1)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Imran Khan</h3>
+                                <p class="text-xs text-slate-500">Senior Consultant Cardiac Surgery</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">2)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Kaleem Ahmad</h3>
+                                <p class="text-xs text-slate-500">Senior Consultant Cardiac Anaesthesia</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">3)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Sheikh Muhammad Ahmed Tariq</h3>
+                                <p class="text-xs text-slate-500">Senior Consultant Cardiac Anaesthesia</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">4)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Syeda Atiqa Batul</h3>
+                                <p class="text-xs text-slate-500">Senior Consultant Cardiac EP</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">5)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Waseem Sajjad</h3>
+                                <p class="text-xs text-slate-500">Senior Consultant Cardiac EP</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">6)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Muhammad Muezz ud Din</h3>
+                                <p class="text-xs text-slate-500">Senior Consultant Interventional Cardiologist</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">7)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Tahira Sadiq</h3>
+                                <p class="text-xs text-slate-500">Consultant Interventional Cardiology</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">8)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Hamza Iqbal</h3>
+                                <p class="text-xs text-slate-500">Consultant Cardiac Surgery</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">9)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Waqas Khalid</h3>
+                                <p class="text-xs text-slate-500">Consultant Cardiac Surgery</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">10)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Khawar Naeem Satti</h3>
+                                <p class="text-xs text-slate-500">Consultant Interventional Cardiology</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">11)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Sidra Liaqat</h3>
+                                <p class="text-xs text-slate-500">Consultant Pathology</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-3">
+                            <span class="font-bold text-jic-blue text-xs">12)</span>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Dr. Saima Rasheed Khan</h3>
+                                <p class="text-xs text-slate-500">Consultant Heart Failure & Devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. DOWNLOADS -->
+                <section id="downloads" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Public Information & Portal</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Downloads & Reports</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Access online patient lab reporting systems and provisional recruitment merit lists.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <!-- HMIS Lab Reporting System -->
+                        <a href="https://hmis.punjab.gov.pk/lab-information-system" target="_blank" class="p-5 rounded-2xl bg-blue-50/70 border border-blue-200 hover:border-jic-blue transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-jic-blue text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                                    <i class="fa-solid fa-flask"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 group-hover:text-jic-blue transition text-base">HMIS Lab Reporting System</h4>
+                                    <span class="text-xs text-slate-500">Click to view/download patient lab reports</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-jic-blue"></i>
+                        </a>
+
+                        <!-- Provisional Merit Lists -->
+                        <a href="recruitment.html" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-jic-blue transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-jic-blue group-hover:text-white transition">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 group-hover:text-jic-blue transition text-base">Provisional Merit Lists</h4>
+                                    <span class="text-xs text-slate-500">View recruitment merit lists</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-jic-blue"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- 5. USEFUL LINKS -->
+                <section id="useful-links" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Government & Health Resources</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Useful Links</h2>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <a href="https://health.punjab.gov.pk" target="_blank" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-jic-blue transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-building-columns text-jic-blue text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm group-hover:text-jic-blue transition">SHC&ME Department Punjab</h4>
+                                    <span class="text-xs text-slate-400">health.punjab.gov.pk</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-jic-blue"></i>
+                        </a>
+
+                        <a href="https://punjab.gov.pk" target="_blank" class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-jic-blue transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-landmark text-jic-blue text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm group-hover:text-jic-blue transition">Government of the Punjab</h4>
+                                    <span class="text-xs text-slate-400">punjab.gov.pk</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-jic-blue"></i>
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-700/80">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 bg-white/95 p-2.5 rounded-xl w-fit">
+                        <img src="JIC_LOGO.jpg" alt="JIC Logo Footer" class="h-10 w-auto object-contain" />
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Jinnah Institute of Cardiology (JIC) is a premier public sector cardiac institute in Lahore dedicated to specialized patient care, research, and medical education.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="Departments.html" class="hover:text-white transition">Departments</a></li>
+                        <li><a href="Medical_Services.html" class="hover:text-white transition">Medical Services</a></li>
+                        <li><a href="Info_Desk.html" class="hover:text-white transition">Info Desk</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Core Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="Medical_Services.html" class="hover:text-white transition">24/7 Cardiac Emergency</a></li>
+                        <li><a href="Medical_Services.html" class="hover:text-white transition">Interventional Angiography</a></li>
+                        <li><a href="Medical_Services.html" class="hover:text-white transition">Heart Transplant Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Visit or Call Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-red-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Emergency & Helpline:</span>
+                                <a href="tel:04299070404" class="text-white font-bold hover:underline">042-99070404</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+                <div>&copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                    <span>Powered by IT Department - JIC Lahore</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
