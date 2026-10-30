@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Services - Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-red-700 text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-red-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-red-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="index.html" class="flex items-center space-x-3 group py-2">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-12 md:h-14 w-auto object-contain transition transform group-hover:scale-105" />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-medium text-slate-700 text-sm">
+				
+					<a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">About Us</a>
+					<a href="Departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="Medical_Services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="Info_Desk.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Info Desk</a>
+                    <a href="Patient_Care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Patient Care</a>
+				
+				
+                <!--    <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about-us.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">About Us</a>
+                    <a href="departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="medical-services.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">Medical Services</a>
+                    <a href="index.html#news" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Announcements</a>
+                    <a href="index.html#contact" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Contact</a> -->
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:04299070404" class="bg-jic-navy hover:bg-blue-900 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-phone-volume text-red-400"></i>
+                        <span>Helpline</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Home</a>
+            <a href="about-us.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">About Us</a>
+            <a href="departments.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Departments</a>
+            <a href="medical-services.html" class="block px-3 py-2 rounded-md font-semibold text-jic-blue bg-blue-50">Medical Services</a>
+            <a href="index.html#news" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Announcements</a>
+            <a href="index.html#contact" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB HEADER BANNER -->
+    <section class="hero-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight">Medical Services</h1>
+                    <p class="text-blue-200 text-sm mt-1">Advanced Clinical Care, Cardiac Interventions, Electrophysiology & Surgical Specialties</p>
+                </div>
+                <nav class="text-xs text-blue-200 flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md w-fit">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <span>/</span>
+                    <span class="text-white font-semibold">Medical Services</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SUB-MENU STRIP -->
+    <div class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
+            <div class="flex space-x-6 py-3 text-xs md:text-sm font-semibold whitespace-nowrap">
+                <a href="#emergency-services" class="text-jic-blue hover:text-blue-800 transition flex items-center space-x-1"><i class="fa-solid fa-truck-medical mr-1"></i> Emergency</a>
+                <a href="#opd" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-hospital-user mr-1"></i> OPD</a>
+                <a href="#cardiology-services" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-heart-pulse mr-1"></i> Cardiology</a>
+                <a href="#interventional-cardiology" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-syringe mr-1"></i> Interventional</a>
+                <a href="#non-invasive-cardiology" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-wave-square mr-1"></i> Non-Invasive</a>
+                <a href="#electrophysiology" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-bolt mr-1"></i> EP</a>
+                <a href="#preventive-cardiology" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-shield-heart mr-1"></i> Preventive</a>
+                <a href="#adult-cardiac-surgery" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-user-doctor mr-1"></i> Surgery</a>
+                <a href="#transplant-center" class="text-slate-600 hover:text-jic-blue transition flex items-center space-x-1"><i class="fa-solid fa-hand-holding-heart mr-1"></i> Transplant</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTENT GRID -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid lg:grid-cols-12 gap-10">
+            
+            <!-- LEFT NAVIGATION SIDEBAR -->
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-36 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2">
+                    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 border-b pb-2">Medical Services Navigation</h3>
+                    <a href="#emergency-services" class="block px-3 py-2 rounded-lg text-xs font-semibold text-jic-blue bg-blue-50 border-l-4 border-jic-blue">Emergency Services</a>
+                    <a href="#opd" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Out-Patient Department (OPD)</a>
+                    <a href="#cardiology-services" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Cardiology Services</a>
+                    <a href="#interventional-cardiology" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Interventional Cardiology</a>
+                    <a href="#non-invasive-cardiology" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Non-Invasive Cardiology</a>
+                    <a href="#electrophysiology" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Electrophysiology</a>
+                    <a href="#preventive-cardiology" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Preventive Cardiology</a>
+                    <a href="#adult-cardiac-surgery" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Adult Cardiac Surgery</a>
+                    <a href="#transplant-center" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Maryam Nawaz Transplant Center</a>
+                    <a href="#minimally-invasive-surgery" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Minimally Invasive Surgery</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT COLUMNS -->
+            <main class="lg:col-span-9 space-y-16">
+
+                <!-- 1. EMERGENCY SERVICES -->
+                <section id="emergency-services" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-red-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-extrabold text-red-600 uppercase tracking-widest">24/7 Critical Response</span>
+                            <h2 class="text-2xl font-bold text-slate-900 mt-1">Emergency Services</h2>
+                        </div>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700">
+                            <i class="fa-solid fa-clock mr-1"></i> Always Open
+                        </span>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The Emergency Department provides 24/7 rapid triage, continuous cardiac monitoring, and immediate life-saving interventions for acute cardiovascular events.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-heart-circle-bolt mr-1.5"></i> Triage & Rapid Assessment</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Ensures immediate vital sign stabilization and rapid chest pain risk evaluation upon arrival.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-kit-medical mr-1.5"></i> Resuscitation & Acute Care</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Advanced Cardiac Life Support (ACLS), invasive hemodynamic monitoring, emergency intubation, and continuous cardiac telemetry.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-stretcher mr-1.5"></i> Primary PCI Capability</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Direct access pathway to catheterization laboratories for immediate balloon angioplasty and stenting in acute myocardial infarction.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-x-ray mr-1.5"></i> Acute Stroke & Aortic Protocol</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Fast-track multi-slice CT angiography for acute aortic dissection, pulmonary embolism, and cerebrovascular events.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. OUT-PATIENT DEPARTMENT (OPD) -->
+                <section id="opd" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Consultation & Care</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Out-Patient Department (OPD)</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Provides consultation, evaluation, diagnosis, and follow-up care for patients with cardiovascular conditions.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-user-doctor mr-1.5"></i> Specialist Consultations</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Diagnostic evaluations, risk stratification, and specialized clinical assessments for routine and complex cardiovascular conditions.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-clinic-medical mr-1.5"></i> Specialized Clinics</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Dedicated clinics for Heart Failure, Hypertension, Arrhythmia & Pacemaker, Valve Disease, and Post-Surgical Follow-up.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-vials mr-1.5"></i> Diagnostic Integration</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Direct coordination with non-invasive diagnostics for same-day ECG, Echocardiography, ETT, and laboratory investigations.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-jic-blue"><i class="fa-solid fa-notes-medical mr-1.5"></i> Long-Term Management</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Comprehensive chronic disease monitoring, medication titration, lifestyle counseling, and secondary prevention planning.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. CARDIOLOGY SERVICES -->
+                <section id="cardiology-services" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Medical Management</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Cardiology Services</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Offers comprehensive medical evaluation and management of a wide range of cardiovascular diseases.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-heart-pulse text-jic-blue mr-1.5"></i> Comprehensive Clinical Care</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Diagnosis, risk assessment, and management of coronary artery disease, heart failure, valvular heart disease, and hypertension.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-laptop-medical text-jic-blue mr-1.5"></i> Non-Invasive Diagnostics</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Advanced diagnostic integration including 12-lead ECG, 2D/3D Echocardiography, Exercise Stress Testing (ETT), Holter monitoring, and Ambulatory BP tracking.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-house-medical text-jic-blue mr-1.5"></i> Specialized Clinics</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Dedicated disease-management clinics for Heart Failure, Lipid Management, Cardiac Rehabilitation, and Post-Procedure follow-ups.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-code-merge text-jic-blue mr-1.5"></i> Interventional Integration</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Direct linkage with catheterization laboratories for diagnostic angiography, angioplasty (PCI), and structural heart care.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. INTERVENTIONAL CARDIOLOGY -->
+                <section id="interventional-cardiology" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Catheter-Based Procedures</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Interventional Cardiology</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Provides minimally invasive catheter-based procedures for the diagnosis and treatment of cardiovascular conditions.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-syringe text-jic-blue mr-1.5"></i> Coronary Interventions</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Diagnostic Coronary Angiography, Primary and Elective Percutaneous Coronary Intervention (PCI / Angioplasty), and Stenting.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-microscope text-jic-blue mr-1.5"></i> Complex Coronary Care</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Chronic Total Occlusion (CTO) interventions, Rotational Atherectomy, Intravascular Ultrasound (IVUS), and Fractional Flow Reserve (FFR) assessment.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-heart text-jic-blue mr-1.5"></i> Structural Heart Disease</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Transcatheter Aortic Valve Implantation (TAVI/TAVR), Balloon Valvuloplasty, and Atrial/Ventricular Septal Defect closures.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-plug text-jic-blue mr-1.5"></i> Device & Vascular Interventions</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Permanent Pacemaker Implantation, Implantable Cardioverter Defibrillator (ICD) placement, Cardiac Resynchronization Therapy (CRT), and Peripheral Vascular Angioplasty.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. NON-INVASIVE CARDIOLOGY -->
+                <section id="non-invasive-cardiology" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Diagnostic Investigations</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Non-Invasive Cardiology</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Provides advanced non-invasive cardiac investigations to assess heart structure, function, and overall cardiovascular health.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-wave-square text-jic-blue mr-1.5"></i> Echocardiography Services</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Comprehensive 2D/3D, TEE, and stress echocardiograms to evaluate heart valves, chambers, and pumping strength.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-person-running text-jic-blue mr-1.5"></i> Stress & Rhythm Diagnostics</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Exercise Tolerance Testing (ETT) and Holter rhythm tracking to detect ischemia and arrhythmias.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-heart-circle-check text-jic-blue mr-1.5"></i> Vascular Diagnostics</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Ambulatory blood pressure profiling and Doppler ultrasound assessment of major peripheral vessels.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-camera-retro text-jic-blue mr-1.5"></i> Advanced Diagnostic Imaging</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                CT Coronary Angiography and nuclear myocardial perfusion studies for accurate non-surgical diagnosis.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. ELECTROPHYSIOLOGY -->
+                <section id="electrophysiology" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Rhythm Disorders</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Electrophysiology</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Specializes in the diagnosis and management of heart rhythm disorders through advanced electrophysiological evaluation and treatment.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-bolt text-indigo-600 mr-1.5"></i> Advanced Arrhythmia Evaluation</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                High-precision diagnostic electrophysiology studies (EPS) to pinpoint electrical system abnormalities of the heart.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-wand-magic-sparkles text-indigo-600 mr-1.5"></i> Catheter Ablation</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                State-of-the-art radiofrequency and cryoablation therapies to restore normal heart rhythms in AFib, SVT, and VT.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-battery-three-quarters text-indigo-600 mr-1.5"></i> Cardiac Rhythm Devices</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Implantation and management of pacemakers, defibrillators (ICD), and biventricular devices (CRT) for heart failure.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-heart-circle-bolt text-indigo-600 mr-1.5"></i> Comprehensive Rhythm Care</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Specialized clinics for syncope evaluation, inherited arrhythmia syndromes, and device follow-up optimization.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. PREVENTIVE CARDIOLOGY -->
+                <section id="preventive-cardiology" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Early Risk Management</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Preventive Cardiology</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Focuses on early risk assessment, prevention, and management of cardiovascular disease through lifestyle and clinical interventions.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-shield-heart text-emerald-600 mr-1.5"></i> Cardiovascular Risk Assessment</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Early detection through lipid profiling, advanced lipid biomarkers, high-sensitivity C-reactive protein (hs-CRP), and coronary calcium scoring.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-chart-line text-emerald-600 mr-1.5"></i> Metabolic & Hypertension Control</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Comprehensive management of resistant hypertension, dyslipidemia, metabolic syndrome, and cardiovascular risk in diabetic patients.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-apple-whole text-emerald-600 mr-1.5"></i> Lifestyle & Behavioral Medicine</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Tailored nutritional counseling, structured smoking cessation programs, weight management plans, and stress reduction strategies.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-dna text-emerald-600 mr-1.5"></i> Family & Genetic Risk Evaluation</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Screening and early intervention for familial hypercholesterolemia, premature coronary artery disease, and inherited cardiovascular conditions.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 8. ADULT CARDIAC SURGERY -->
+                <section id="adult-cardiac-surgery" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Surgical Specialties</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Adult Cardiac Surgery</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Provides specialized surgical treatment for adults with complex cardiac conditions.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-heart-circle-check text-jic-blue mr-1.5"></i> Coronary Artery Bypass Surgery (CABG)</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Advanced surgical options including off-pump (beating heart) and total arterial revascularization.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-hand-holding-heart text-jic-blue mr-1.5"></i> Heart Valve Repair & Replacement</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Comprehensive surgical restoration for diseased mitral, aortic, and tricuspid valves.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-hospital-user text-jic-blue mr-1.5"></i> Aortic Surgery</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Emergency and elective surgical management of complex aortic aneurysms and acute aortic dissections.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-user-doctor text-jic-blue mr-1.5"></i> Complex Adult Interventions</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Specialized treatment for cardiac tumors, structural heart defects, and high-risk surgical revisions.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 9. MARYAM NAWAZ HEART TRANSPLANT CENTER -->
+                <section id="transplant-center" class="scroll-mt-36 bg-gradient-to-br from-red-50 via-white to-rose-50 rounded-3xl p-8 border border-red-200 shadow-sm space-y-6">
+                    <div class="border-b border-red-100 pb-4">
+                        <span class="text-xs font-extrabold text-red-600 uppercase tracking-widest">Advanced Heart Failure & Organ Replacement</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Maryam Nawaz Heart Transplant Center</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Provides specialized multidisciplinary care for patients with advanced heart failure, including evaluation and heart transplantation services.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-white border border-red-100 shadow-2xs">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-heart-crack mr-1.5"></i> Advanced Heart Failure Care</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Expert clinical management and decision-making for end-stage cardiovascular disease.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white border border-red-100 shadow-2xs">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-hand-holding-heart mr-1.5"></i> Comprehensive Transplant Services</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Full pre-transplant candidate evaluation, donor coordination, and surgical transplantation services.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white border border-red-100 shadow-2xs">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-gear mr-1.5"></i> Mechanical Assist Devices</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Implantation and maintenance of Left Ventricular Assist Devices (LVADs) as a bridge-to-transplant or destination therapy.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white border border-red-100 shadow-2xs">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1 text-red-700"><i class="fa-solid fa-bed-pulse mr-1.5"></i> Dedicated Post-Op Surveillance</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Specialized ICU monitoring, routine rejection screening, and tailored long-term immunosuppression regimens.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 10. MINIMALLY INVASIVE CARDIAC SURGERY -->
+                <section id="minimally-invasive-surgery" class="scroll-mt-36 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Next-Gen Surgical Techniques</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-1">Minimally Invasive Cardiac Surgery</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Provides advanced surgical techniques designed to treat cardiac conditions through smaller incisions, supporting faster recovery and reduced surgical impact.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-compress text-jic-blue mr-1.5"></i> Smaller Incisions & Minimal Trauma</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Avoids full sternotomy (chest-splitting) by operating through small mini-thoracotomy access ports.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-heart-circle-bolt text-jic-blue mr-1.5"></i> Advanced Valve & Bypass Procedures</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Enables precise mitral/aortic valve interventions and single/multi-vessel coronary bypass.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-person-walking-arrow-loop-left text-jic-blue mr-1.5"></i> Faster Recovery & Rehabilitation</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Reduces hospital stay, minimizes post-operative pain, lowers blood transfusion requirements, and accelerates return to daily activities.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fa-solid fa-sparkles text-jic-blue mr-1.5"></i> Enhanced Cosmetic Outcomes</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Substantially smaller surgical scars compared to traditional open-heart procedures.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-700/80">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 bg-white/95 p-2.5 rounded-xl w-fit">
+                        <img src="JIC_LOGO.jpg" alt="JIC Logo Footer" class="h-10 w-auto object-contain" />
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Jinnah Institute of Cardiology (JIC) is a premier public sector cardiac institute in Lahore dedicated to specialized patient care, research, and medical education.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="departments.html" class="hover:text-white transition">Departments</a></li>
+                        <li><a href="medical-services.html" class="hover:text-white transition">Medical Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Core Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="medical-services.html#emergency-services" class="hover:text-white transition">24/7 Cardiac Emergency</a></li>
+                        <li><a href="medical-services.html#interventional-cardiology" class="hover:text-white transition">Interventional Angiography</a></li>
+                        <li><a href="medical-services.html#transplant-center" class="hover:text-white transition">Heart Transplant Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Visit or Call Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-red-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Emergency & Helpline:</span>
+                                <a href="tel:04299070404" class="text-white font-bold hover:underline">042-99070404</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+                <div>&copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                    <span>Powered by IT Department - JIC Lahore</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+```
+
+### How to Publish:
+1. Save this code in a file named **`medical-services.html`** in your repository root.
+2. Commit and push the file to GitHub. Cloudflare Pages will automatically publish it at `jic.gop.pk/medical-services.html`.

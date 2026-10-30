@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provisional Merit Lists - Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-red-700 text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-red-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-red-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="index.html" class="flex items-center space-x-3 group py-2">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-12 md:h-14 w-auto object-contain transition transform group-hover:scale-105" />
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-medium text-slate-700 text-sm">
+                    <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Home</a>
+                    <a href="about-us.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">About Us</a>
+                    <a href="departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Departments</a>
+                    <a href="medical-services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Medical Services</a>
+                    <a href="info-desk.html" class="px-3 py-2 rounded-lg text-jic-blue font-semibold bg-blue-50">Info Desk</a>
+                    <a href="patient-care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100 transition">Patient Care</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:04299070404" class="bg-jic-navy hover:bg-blue-900 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-phone-volume text-red-400"></i>
+                        <span>Helpline</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB HEADER BANNER -->
+    <section class="hero-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight">Provisional Merit Lists</h1>
+                    <p class="text-blue-200 text-sm mt-1">Recruitment & Career Portal - JIC Lahore</p>
+                </div>
+                <nav class="text-xs text-blue-200 flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md w-fit">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <span>/</span>
+                    <a href="info-desk.html" class="hover:text-white transition">Info Desk</a>
+                    <span>/</span>
+                    <span class="text-white font-semibold">Merit Lists</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT SECTION -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm space-y-8">
+            
+            <!-- Introductory Notice -->
+            <div class="border-b border-slate-100 pb-6">
+                <span class="text-xs font-extrabold text-jic-blue uppercase tracking-widest">Public Notice</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-1">Recruitment Merit Lists</h2>
+                <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                    Provisional Merit lists for various categories have been published, please click on the relevant list to view.
+                </p>
+            </div>
+
+            <!-- Merit Lists Link Cards Grid -->
+            <div class="grid gap-4">
+                
+                <!-- 1. Medical Director -->
+                <a href="pdf/provisional-merit-list-medical-director.pdf" target="_blank" class="group flex items-center justify-between p-5 rounded-2xl border border-slate-200 hover:border-jic-blue bg-slate-50 hover:bg-blue-50/50 transition shadow-2xs">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg group-hover:bg-jic-blue group-hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 group-hover:text-jic-blue transition text-base">Provisional Merit List for Medical Director</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">Click to view or download official PDF document</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-jic-blue group-hover:border-jic-blue transition shadow-2xs">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <!-- 2. Deputy Hospital Director -->
+                <a href="pdf/provisional-merit-list-deputy-hospital-director.pdf" target="_blank" class="group flex items-center justify-between p-5 rounded-2xl border border-slate-200 hover:border-jic-blue bg-slate-50 hover:bg-blue-50/50 transition shadow-2xs">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg group-hover:bg-jic-blue group-hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 group-hover:text-jic-blue transition text-base">Provisional Merit List for Deputy Hospital Director</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">Click to view or download official PDF document</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-jic-blue group-hover:border-jic-blue transition shadow-2xs">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <!-- 3. Deputy Director Nursing -->
+                <a href="pdf/provisional-merit-list-deputy-director-nursing.pdf" target="_blank" class="group flex items-center justify-between p-5 rounded-2xl border border-slate-200 hover:border-jic-blue bg-slate-50 hover:bg-blue-50/50 transition shadow-2xs">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg group-hover:bg-jic-blue group-hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 group-hover:text-jic-blue transition text-base">Provisional Merit List for Deputy Director Nursing</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">Click to view or download official PDF document</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-jic-blue group-hover:border-jic-blue transition shadow-2xs">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <!-- 4. Software Engineer -->
+                <a href="pdf/provisional-merit-list-software-engineer.pdf" target="_blank" class="group flex items-center justify-between p-5 rounded-2xl border border-slate-200 hover:border-jic-blue bg-slate-50 hover:bg-blue-50/50 transition shadow-2xs">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg group-hover:bg-jic-blue group-hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 group-hover:text-jic-blue transition text-base">Provisional Merit List for Software Engineer</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">Click to view or download official PDF document</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-jic-blue group-hover:border-jic-blue transition shadow-2xs">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Disclaimer Box -->
+            <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs leading-relaxed space-y-1">
+                <p class="font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Disclaimer:</p>
+                <p>Mere appearance of a name in these provisional merit lists does not confer any right to appointment. Final eligibility is subject to the verification of original documents and credentials at the time of interviews.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+                <div>&copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                    <span>Powered by IT Department - JIC Lahore</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        // Add toggle logic if mobile menu element exists
+    </script>
+</body>
+</html>
