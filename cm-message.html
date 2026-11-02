@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message from the Chief Minister Punjab - Jinnah Institute of Cardiology (JIC)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0F2C59 0%, #1E3A8A 50%, #0F172A 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-jic-navy text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-blue-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-blue-100">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Jinnah Institute of Cardiology, Lahore</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-hospital mr-1"></i> Government of the Punjab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="relative z-50 bg-white shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="index.html" class="flex items-center space-x-3 group py-1 shrink-0">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
+                </a>
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-base font-normal font-serif text-slate-700">
+                    <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition">About Us</a>
+                    <a href="Departments.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition">Departments</a>
+                    <a href="Medical_Services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition">Medical Services</a>
+                    <a href="Info_Desk.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition">Info Desk</a>
+                    <a href="Patient_Care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition">Patient Care</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB HEADER BANNER -->
+    <section class="hero-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight">Chief Minister's Message</h1>
+                    <p class="text-blue-200 text-sm mt-1">Leadership Vision for Jinnah Institute of Cardiology</p>
+                </div>
+                <nav class="text-xs text-blue-200 flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md w-fit">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <span>/</span>
+                    <span class="text-white font-semibold">CM's Message</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL MESSAGE CONTENT SECTION -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-8">
+            
+            <div class="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-slate-100">
+                <div class="w-48 h-48 rounded-2xl overflow-hidden border-4 border-slate-200 shadow-xl shrink-0">
+                    <img src="cm.svg" alt="Chief Minister of Punjab" class="w-full h-full object-cover object-top" />
+                </div>
+                <div>
+                   <!-- <span class="text-xs font-extrabold tracking-widest text-jic-blue uppercase bg-blue-100 px-3 py-1 rounded-full"></span> -->
+                    <h2 class="text-3xl font-bold text-slate-900 mt-3">Maryam Nawaz Sharif</h2>
+                    <p class="text-jic-blue font-semibold text-sm mt-1">Chief Minister Punjab</p>
+                </div>
+            </div>
+
+            <div class="space-y-6 text-slate-700 text-base leading-relaxed text-justify">
+                <p>
+                    It is a matter of immense pride and satisfaction to witness the rapid operationalization of the Jinnah Institute of Cardiology (JIC) in Lahore—a landmark healthcare initiative designed to provide world-class, specialized cardiovascular care to the people of Punjab right at their doorstep.
+                </p>
+                <p>
+                    Cardiovascular diseases demand immediate, advanced, and uncompromised medical attention. With the establishment of the state-of-the-art <strong>Maryam Nawaz Heart Transplant Unit</strong> within the institute, JIC is poised to bridge a critical healthcare gap in our region. This advanced facility will offer hope and advanced life-saving interventions, ensuring that patients requiring complex heart surgeries and heart failure management no longer need to travel abroad for the treatment they deserve.
+                </p>
+                <p>
+                    Our vision is rooted in making quality healthcare accessible, equitable, and patient-centric. The dedication of our medical professionals, administrative leadership, and support staff at JIC embodies our unwavering commitment to public welfare. I extend my heartiest congratulations to the entire team and reaffirm the Government of the Punjab's continuous support in making Punjab healthier, stronger, and more resilient.
+                </p>
+            </div>
+
+            <div class="pt-6 border-t border-slate-100 flex justify-between items-center">
+                <a href="index.html" class="inline-flex items-center space-x-2 text-xs font-bold text-jic-blue hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+                <div class="text-right">
+                    <div class="font-bold text-slate-900 text-sm">Maryam Nawaz Sharif</div>
+                    <div class="text-xs text-slate-500">Chief Minister Punjab</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-jic-navy text-slate-300 pt-12 pb-8 border-t-4 border-jic-blue mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-400">
+            &copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
