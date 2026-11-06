@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Doctor - Jinnah Institute of Cardiology (JIC), Lahore</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jic: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            lightbg: '#F8FAFC',
+                            accent: '#0284C7',
+                            emerald: '#059669',
+                            red: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-jic-navy">
+
+    <!-- TOP EMERGENCY NOTICE BAR -->
+    <div class="bg-jic-navy text-white text-xs md:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <span class="font-semibold tracking-wide"><i class="fa-solid fa-truck-medical mr-1"></i> 24/7 Cardiac Emergency Helpline:</span>
+                <a href="tel:04299070404" class="underline font-bold hover:text-blue-200 transition">042-99070404</a>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-blue-100">
+			<a href="Patient_Care.html#international-patients" class="font-bold hover:text-sky-300 underline flex items-center gap-1 transition">
+                    <i class="fa-solid fa-globe"></i> International patients
+                <a href="Recruitment.html" class="font-bold hover:text-sky-300 underline flex items-center gap-1 transition">
+                    <i class="fa-solid fa-briefcase"></i> Careers
+                </a>
+                <a href="medical-professionals.html" class="font-bold hover:text-sky-300 underline flex items-center gap-1 transition">
+                    <i class="fa-solid fa-user-doctor"></i> Medical Professionals
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="relative z-50 bg-white shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                
+                <!-- Logo & Branding -->
+                <a href="index.html" class="flex items-center space-x-3 group py-1 shrink-0">
+                    <img src="JIC_LOGO.jpg" alt="Jinnah Institute of Cardiology Logo" class="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" onerror="this.src='https://placehold.co/240x80/0F2C59/ffffff?text=JIC+Lahore+Logo'" />
+                </a>
+
+                <!-- Desktop Navigation Links & Search Bar -->
+                <div class="hidden lg:flex items-center space-x-5 xl:space-x-6">
+                    <nav class="flex items-center space-x-1 xl:space-x-2 text-base font-normal text-slate-700">
+                        <a href="index.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">Home</a>
+                        <a href="about.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">About Us</a>
+                        <a href="Services.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap font-medium">Services</a>
+                        <a href="find-a-doctor.html" class="px-3 py-2 rounded-lg text-jic-blue bg-blue-50/80 hover:bg-blue-100/60 transition-all duration-200 whitespace-nowrap font-semibold">Find a Doctor</a>
+                        <a href="Patient_Care.html" class="px-3 py-2 rounded-lg hover:text-jic-blue hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">Health Resources</a>
+                    </nav>
+
+                    <!-- Search Bar Component -->
+                    <div class="relative w-44 xl:w-52 shrink-0">
+                        <input type="text" placeholder="Search doctor or service..." class="w-full pl-9 pr-3 py-1.5 text-sm font-sans text-slate-700 bg-slate-50 border border-slate-200 rounded-full focus:outline-none focus:border-jic-blue focus:ring-1 focus:ring-jic-blue transition-all duration-200" />
+                        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-jic-navy focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Home</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">About Us</a>
+            <a href="Services.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100 font-medium">Services</a>
+            <a href="find-a-doctor.html" class="block px-3 py-2 rounded-md font-semibold text-jic-blue bg-blue-50">Find a Doctor</a>
+            <a href="Patient_Care.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-100">Health Resources</a>
+            
+            <div class="pt-2 border-t border-slate-100">
+                <a href="tel:04299070404" class="w-full bg-jic-navy text-white text-center font-semibold py-2.5 rounded-lg block">
+                    <i class="fa-solid fa-phone mr-2 text-red-400"></i> Call Emergency (042-99070404)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- FIND A DOCTOR HERO SECTION -->
+    <section class="bg-gradient-to-r from-jic-navy to-slate-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="inline-block border-4 border-double border-white/80 px-8 py-3 rounded-md bg-white/5 backdrop-blur-sm shadow-xl">
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-wide uppercase">Find a Doctor</h1>
+            </div>
+            <p class="text-slate-300 text-sm mt-3">Filter our world-class cardiology faculty by specialty and view complete doctor profiles.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT SECTION -->
+    <section class="py-12 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- LEFT SIDEBAR: Specialties List -->
+                <div class="lg:col-span-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-md sticky top-6">
+                    <h2 class="text-xl font-extrabold text-jic-navy pb-3 border-b border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ul text-jic-blue"></i> Specialties
+                    </h2>
+                    
+                    <div class="mt-4 space-y-2" id="specialty-filters">
+                        <button onclick="filterDoctors('all', this)" class="spec-btn w-full text-left px-4 py-3 rounded-xl font-medium text-sm transition-all flex items-center justify-between bg-jic-blue text-white shadow-sm">
+                            <span>All Specialties</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <button onclick="filterDoctors('interventional', this)" class="spec-btn w-full text-left px-4 py-3 rounded-xl font-medium text-sm text-slate-700 hover:bg-blue-50 hover:text-jic-blue transition-all flex items-center justify-between border border-slate-100">
+                            <span>Interventional Cardiology</span>
+                            <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                        </button>
+                        <button onclick="filterDoctors('adult-surgery', this)" class="spec-btn w-full text-left px-4 py-3 rounded-xl font-medium text-sm text-slate-700 hover:bg-blue-50 hover:text-jic-blue transition-all flex items-center justify-between border border-slate-100">
+                            <span>Adult Cardiac Surgery</span>
+                            <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                        </button>
+                        <button onclick="filterDoctors('non-interventional', this)" class="spec-btn w-full text-left px-4 py-3 rounded-xl font-medium text-sm text-slate-700 hover:bg-blue-50 hover:text-jic-blue transition-all flex items-center justify-between border border-slate-100">
+                            <span>Non-Interventional Cardiology</span>
+                            <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                        </button>
+                        <button onclick="filterDoctors('heart-failure', this)" class="spec-btn w-full text-left px-4 py-3 rounded-xl font-medium text-sm text-slate-700 hover:bg-blue-50 hover:text-jic-blue transition-all flex items-center justify-between border border-slate-100">
+                            <span>Heart Failure Clinic</span>
+                            <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                        </button>
+                        <button onclick="filterDoctors('electrophysiology', this)" class="spec-btn w-full text-left px-4 py-3 rounded-xl font-medium text-sm text-slate-700 hover:bg-blue-50 hover:text-jic-blue transition-all flex items-center justify-between border border-slate-100">
+                            <span>Electrophysiology</span>
+                            <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL: Consultants List -->
+                <div class="lg:col-span-8 space-y-6" id="doctors-list">
+                    <div class="flex items-center justify-between bg-white px-6 py-4 rounded-xl border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-900">Doctors Profile List</h2>
+                        <span class="text-xs text-slate-500 font-medium" id="doctor-count">Showing 11 Consultants</span>
+                    </div>
+
+                    <!-- 1. Dr. Imran Khan -->
+                    <div class="doc-card adult-surgery bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc1.jpg" alt="Dr. Imran Khan" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Imran+Khan'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Imran Khan</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Senior Consultant Cardiac Surgery</p>
+                                </div>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full">Adult Cardiac Surgery</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Dr. Kaleem Ahmad -->
+                    <div class="doc-card non-interventional bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc2.jpg" alt="Dr. Kaleem Ahmad" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Kaleem+Ahmad'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Kaleem Ahmad</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Senior Consultant Cardiac Anaesthesia</p>
+                                </div>
+                                <span class="bg-blue-100 text-jic-blue text-xs font-bold px-3 py-1 rounded-full">Non-Interventional Cardiology</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Dr. Sheikh Muhammad Ahmed Tariq -->
+                    <div class="doc-card non-interventional bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc3.jpg" alt="Dr. Sheikh Muhammad Ahmed Tariq" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Sheikh+Tariq'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Sheikh Muhammad Ahmed Tariq</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Senior Consultant Cardiac Anaesthesia</p>
+                                </div>
+                                <span class="bg-blue-100 text-jic-blue text-xs font-bold px-3 py-1 rounded-full">Non-Interventional Cardiology</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Dr. Syeda Atiqa Batul -->
+                    <div class="doc-card electrophysiology bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc4.jpg" alt="Dr. Syeda Atiqa Batul" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Syeda+Atiqa'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Syeda Atiqa Batul</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Senior Consultant Cardiac EP</p>
+                                </div>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Electrophysiology</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Dr. Waseem Sajjad -->
+                    <div class="doc-card electrophysiology bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc1.jpg" alt="Dr. Waseem Sajjad" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Waseem+Sajjad'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Waseem Sajjad</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Senior Consultant Cardiac EP</p>
+                                </div>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Electrophysiology</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- 6. Dr. Tahira Sadiq -->
+                    <div class="doc-card interventional bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc3.jpg" alt="Dr. Tahira Sadiq" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Tahira+Sadiq'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Tahira Sadiq</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Consultant Interventional Cardiology</p>
+                                </div>
+                                <span class="bg-blue-100 text-jic-blue text-xs font-bold px-3 py-1 rounded-full">Interventional Cardiology</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Dr. Hamza Iqbal -->
+                    <div class="doc-card adult-surgery bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc4.jpg" alt="Dr. Hamza Iqbal" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Hamza+Iqbal'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Hamza Iqbal</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Consultant Cardiac Surgery</p>
+                                </div>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full">Adult Cardiac Surgery</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Dr. Waqas Khalid -->
+                    <div class="doc-card adult-surgery bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc1.jpg" alt="Dr. Waqas Khalid" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Waqas+Khalid'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Waqas Khalid</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Consultant Cardiac Surgery</p>
+                                </div>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full">Adult Cardiac Surgery</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Dr. Khawar Naeem Satti -->
+                    <div class="doc-card interventional bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc2.jpg" alt="Dr. Khawar Naeem Satti" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Khawar+Satti'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Khawar Naeem Satti</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Consultant Interventional Cardiology</p>
+                                </div>
+                                <span class="bg-blue-100 text-jic-blue text-xs font-bold px-3 py-1 rounded-full">Interventional Cardiology</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Dr. Sidra Liaqat -->
+                    <div class="doc-card non-interventional bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc3.jpg" alt="Dr. Sidra Liaqat" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/0F2C59/ffffff?text=Dr.+Sidra+Liaqat'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Sidra Liaqat</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Consultant Pathology</p>
+                                </div>
+                                <span class="bg-blue-100 text-jic-blue text-xs font-bold px-3 py-1 rounded-full">Non-Interventional Cardiology</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. Dr. Saima Rasheed Khan -->
+                    <div class="doc-card heart-failure bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 mx-auto md:mx-0">
+                            <img src="doc4.jpg" alt="Dr. Saima Rasheed Khan" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/059669/ffffff?text=Dr.+Saima+Rasheed'" />
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Dr. Saima Rasheed Khan</h3>
+                                    <p class="text-jic-blue font-semibold text-sm">Consultant Heart Failure & Devices</p>
+                                </div>
+                                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Heart Failure Clinic</span>
+                            </div>
+                            <div class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-3">
+                                <p><strong class="text-slate-900">Introduction:</strong> Specialist in comprehensive adult cardiac surgical operations and patient-centered clinical care.</p>
+                                <p><strong class="text-slate-900">Qualifications:</strong> MBBS, FCPS (Cardiac Surgery)</p>
+                                <p><strong class="text-slate-900">Experience:</strong> 15+ Years in Tertiary Cardiac Care</p>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-600 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> OPD: Mon ~ Sat (08:00 AM - 03:00 PM)</span>
+                                <button onclick="alert('Appointment booking system opening soon.')" class="bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition">
+                                    Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="bg-jic-navy text-slate-300 pt-16 pb-12 border-t-4 border-jic-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-700/80">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 bg-white/95 p-2.5 rounded-xl w-fit">
+                        <img src="JIC_LOGO.jpg" alt="JIC Logo Footer" class="h-10 w-auto object-contain" onerror="this.src='https://placehold.co/180x60/0F2C59/ffffff?text=JIC+Logo'" />
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Jinnah Institute of Cardiology (JIC) is a premier public sector cardiac institute in Lahore dedicated to specialized patient care, research, and medical education.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="Services.html" class="hover:text-white transition">Services</a></li>
+                        <li><a href="find-a-doctor.html" class="hover:text-white transition">Find a Doctor</a></li>
+                        <li><a href="Recruitment.html" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="medical-professionals.html" class="hover:text-white transition">Medical Professionals</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Core Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="Services.html#emergency-services" class="hover:text-white transition">24/7 Cardiac Emergency</a></li>
+                        <li><a href="Services.html#interventional-cardiology" class="hover:text-white transition">Interventional Angiography</a></li>
+                        <li><a href="Services.html#heart-failure" class="hover:text-white transition">Heart Failure Clinic</a></li>
+                        <li><a href="Services.html#adult-cardiac-surgery" class="hover:text-white transition">Adult Cardiac Surgery</a></li>
+                        <li><a href="Services.html#imaging-services" class="hover:text-white transition">Diagnostic Imaging Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 border-b border-slate-700 pb-2">Visit or Call Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-red-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Emergency & Helpline:</span>
+                                <a href="tel:04299070404" class="text-white font-bold hover:underline">042-99070404</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-blue-400 mt-0.5"></i>
+                            <div>
+                                <span class="block text-slate-400">Address:</span>
+                                <span class="text-slate-200">Jinnah Institute of Cardiology Lahore, Punjab, Pakistan</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-4 md:space-y-0">
+                <div>
+                    &copy; 2026 Jinnah Institute of Cardiology (JIC) Lahore. All Rights Reserved.
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-laptop-code text-blue-400"></i>
+                    <span>Powered by IT Department - JIC Lahore</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        function filterDoctors(category, element) {
+            const cards = document.querySelectorAll('.doc-card');
+            let count = 0;
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                    count++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('doctor-count').textContent = `Showing ${count} Consultant${count === 1 ? '' : 's'}`;
+
+            document.querySelectorAll('.spec-btn').forEach(btn => {
+                btn.classList.remove('bg-jic-blue', 'text-white', 'shadow-sm');
+                btn.classList.add('text-slate-700', 'border', 'border-slate-100');
+            });
+            element.classList.add('bg-jic-blue', 'text-white', 'shadow-sm');
+            element.classList.remove('text-slate-700', 'border', 'border-slate-100');
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
