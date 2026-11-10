@@ -597,5 +597,17 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+	<!-- Paste just before </body> in find-a-doctor.html. Adds a "Book Appointment" button to every doctor card. -->
+<script>
+document.querySelectorAll('.doc-card').forEach(card => {
+  const name = card.querySelector('h3').textContent.trim();
+  const id = name.replace(/^Dr\.\s*/i, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const a = document.createElement('a');
+  a.href = 'book-appointment.html?doctor=' + id;
+  a.className = 'inline-block mt-2 bg-jic-navy hover:bg-blue-900 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow transition';
+  a.innerHTML = '<i class="fa-solid fa-calendar-check mr-1"></i> Book Appointment';
+  card.querySelector('.flex-1').appendChild(a);
+});
+</script>
 </body>
 </html>
