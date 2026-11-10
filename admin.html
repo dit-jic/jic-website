@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow"><title>Appointments - JIC Staff</title>
+<script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-slate-100 text-slate-800 text-sm p-4 font-sans">
+<div class="max-w-7xl mx-auto">
+  <div class="flex flex-wrap items-end gap-3 bg-white p-4 rounded-xl border border-slate-200 print:hidden">
+    <h1 class="text-xl font-extrabold text-blue-900 mr-4">JIC Appointments</h1>
+    <label>From<br><input id="from" type="date" class="border rounded px-2 py-1.5"></label>
+    <label>To<br><input id="to" type="date" class="border rounded px-2 py-1.5"></label>
+    <label>Doctor<br><select id="doctor" class="border rounded px-2 py-1.5"><option value="">All</option></select></label>
+    <label>Status<br><select id="status" class="border rounded px-2 py-1.5"><option value="">All</option><option>pending</option><option>confirmed</option><option>completed</option><option>cancelled</option><option>no-show</option></select></label>
+    <label>Search<br><input id="q" placeholder="Name, phone, ref, MR" class="border rounded px-2 py-1.5"></label>
+    <button id="ref" class="bg-blue-900 text-white px-4 py-2 rounded">Refresh</button>
+    <button id="csv" class="border border-blue-900 text-blue-900 px-4 py-2 rounded">Export CSV</button>
+    <button onclick="print()" class="border border-slate-400 px-4 py-2 rounded">Print</button>
+    <span id="count" class="text-slate-500"></span>
+  </div>
+  <div class="mt-4 overflow-x-auto bg-white rounded-xl border border-slate-200">
+    <table class="w-full text-left"><thead class="bg-slate-50 text-slate-600"><tr>
+      <th class="p-2">Date / Time</th><th class="p-2">Doctor</th><th class="p-2">Patient</th><th class="p-2">Contact</th><th class="p-2">Details</th><th class="p-2">Status</th><th class="p-2">Staff note</th></tr></thead>
+    <tbody id="rows"></tbody></table>
+  </div>
+</div>
+<script>
+const $=i=>document.getElementById(i); let data=[];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const lab=t=>{let h=+t.slice(0,2);return (h%12||12)+":"+t.slice(3)+(h>=12?" PM":" AM")};
+const today=new Date(Date.now()+5*36e5).toISOString().slice(0,10); $("from").value=today;
+fetch("/api/doctors").then(r=>r.json()).then(d=>{$("doctor").innerHTML+=d.doctors.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("")});
+async function load(){
+  const p=new URLSearchParams({from:$("from").value,to:$("to").value,doctor:$("doctor").value,status:$("status").value,q:$("q").value});
+  for(const [k,v] of [...p]) if(!v) p.delete(k);
+  const r=await fetch("/api/admin/appointments?"+p); if(!r.ok){$("rows").innerHTML='<tr><td class="p-4 text-red-600" colspan="7">Not authorised. Log in through Cloudflare Access.</td></tr>';return}
+  data=(await r.json()).rows; $("count").textContent=data.length+" appointments";
+  $("rows").innerHTML=data.map(a=>{
+    const wa=(a.phone.startsWith("0")?"92"+a.phone.slice(1):a.phone), msg=encodeURIComponent(`Assalam o Alaikum ${a.patient_name}. Your JIC appointment with ${a.doctor_name} on ${a.appt_date} at ${lab(a.appt_time)} is ${a.status}. Ref: ${a.ref}.`);
+    return `<tr class="border-t align-top"><td class="p-2 whitespace-nowrap"><b>${a.appt_date}</b><br>${lab(a.appt_time)}<br><span class="text-xs text-slate-500">${esc(a.ref)}</span></td>
+    <td class="p-2">${esc(a.doctor_name)}</td>
+    <td class="p-2"><b>${esc(a.patient_name)}</b><br>${esc(a.gender)} ${a.age?esc(a.age)+" yrs":""}<br>${esc(a.visit_type)}${a.mr_number?" | MR "+esc(a.mr_number):""}</td>
+    <td class="p-2">${esc(a.phone)}<br>${esc(a.email)}<br>${esc(a.city)}${a.cnic?"<br>CNIC "+esc(a.cnic):""}<br><a class="text-emerald-700 underline print:hidden" target="_blank" href="https://wa.me/${wa}?text=${msg}">WhatsApp</a></td>
+    <td class="p-2 max-w-xs">${esc(a.reason)}</td>
+    <td class="p-2"><select data-id="${a.id}" class="st border rounded px-1 py-1">${["pending","confirmed","completed","cancelled","no-show"].map(s=>`<option ${s===a.status?"selected":""}>${s}</option>`).join("")}</select></td>
+    <td class="p-2"><input data-id="${a.id}" class="nt border rounded px-2 py-1 w-40" value="${esc(a.staff_note)}"></td></tr>`}).join("")||'<tr><td class="p-4 text-slate-500" colspan="7">No appointments found.</td></tr>';
+}
+const patch=b=>fetch("/api/admin/appointments",{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
+$("rows").onchange=async e=>{const t=e.target;if(t.classList.contains("st")){await patch({id:+t.dataset.id,status:t.value});load()}else if(t.classList.contains("nt"))patch({id:+t.dataset.id,staff_note:t.value})};
+$("ref").onclick=load; $("q").onkeydown=e=>{if(e.key==="Enter")load()};
+$("csv").onclick=()=>{const k=["ref","appt_date","appt_time","doctor_name","status","patient_name","gender","age","phone","email","cnic","city","visit_type","mr_number","reason","staff_note","created_at"];
+  const c=v=>'"'+String(v??"").replace(/"/g,'""')+'"'; const t=[k.join(",")].concat(data.map(a=>k.map(x=>c(a[x])).join(","))).join("\n");
+  const l=document.createElement("a");l.href=URL.createObjectURL(new Blob(["\ufeff"+t],{type:"text/csv"}));l.download="appointments.csv";l.click()};
+load();
+</script></body></html>

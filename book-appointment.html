@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book an Appointment - Jinnah Institute of Cardiology (JIC), Lahore</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{colors:{jic:{navy:'#0F2C59',blue:'#1E40AF',accent:'#0284C7',emerald:'#059669',red:'#DC2626'}},fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+</head>
+<body class="font-sans bg-slate-100 text-slate-800 antialiased">
+<!-- Replace this header/footer with the same ones used in find-a-doctor.html if you want identical navigation -->
+<header class="bg-white shadow-sm border-b border-slate-200"><div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+  <a href="index.html"><img src="JIC_LOGO.jpg" alt="JIC Logo" class="h-14 w-auto" onerror="this.src='https://placehold.co/240x80/0F2C59/ffffff?text=JIC+Lahore'"></a>
+  <nav class="text-sm space-x-4"><a href="index.html" class="hover:text-jic-blue">Home</a><a href="find-a-doctor.html" class="hover:text-jic-blue">Find a Doctor</a></nav>
+</div></header>
+<section class="bg-gradient-to-r from-jic-navy to-slate-900 text-white py-8"><div class="max-w-5xl mx-auto px-4">
+  <h1 class="text-3xl font-extrabold">Book an Appointment</h1>
+  <p class="text-slate-300 text-sm mt-2">Choose your doctor, date and time. Our staff will confirm your request by phone or WhatsApp. For emergencies call <a class="underline font-bold" href="tel:04299070404">042-99070404</a>.</p>
+</div></section>
+
+<main class="max-w-5xl mx-auto px-4 py-10">
+<form id="f" class="bg-white rounded-2xl border border-slate-200 shadow-md p-6 md:p-8 space-y-6" novalidate>
+  <div class="grid md:grid-cols-2 gap-5">
+    <div><label class="block text-sm font-semibold mb-1" for="doctor">Doctor</label>
+      <select id="doctor" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"><option value="">Loading doctors...</option></select></div>
+    <div><label class="block text-sm font-semibold mb-1" for="date">Date <span class="font-normal text-slate-500" id="days"></span></label>
+      <input id="date" type="date" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+  </div>
+  <div><span class="block text-sm font-semibold mb-1">Time</span>
+    <p id="hint" class="text-sm text-slate-500 mb-2" aria-live="polite">Select a doctor and date to see available times.</p>
+    <div id="slots" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2"></div></div>
+
+  <div class="border-t border-slate-200 pt-6 grid md:grid-cols-2 gap-5">
+    <div><label class="block text-sm font-semibold mb-1" for="name">Patient full name *</label><input id="name" autocomplete="name" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+    <div><label class="block text-sm font-semibold mb-1" for="phone">Mobile / WhatsApp number *</label><input id="phone" type="tel" placeholder="03XX XXXXXXX" autocomplete="tel" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+    <div><label class="block text-sm font-semibold mb-1" for="gender">Gender</label><select id="gender" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+    <div><label class="block text-sm font-semibold mb-1" for="age">Age (years)</label><input id="age" type="number" min="0" max="120" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+    <div><label class="block text-sm font-semibold mb-1" for="visitType">Visit type</label><select id="visitType" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"><option>New patient</option><option>Follow-up</option></select></div>
+    <div><label class="block text-sm font-semibold mb-1" for="mrNumber">MR number (follow-up patients)</label><input id="mrNumber" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+    <div><label class="block text-sm font-semibold mb-1" for="cnic">CNIC (optional)</label><input id="cnic" placeholder="XXXXX-XXXXXXX-X" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+    <div><label class="block text-sm font-semibold mb-1" for="city">City</label><input id="city" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+    <div class="md:col-span-2"><label class="block text-sm font-semibold mb-1" for="email">Email (optional)</label><input id="email" type="email" class="w-full border border-slate-300 rounded-lg px-3 py-2.5"></div>
+    <div class="md:col-span-2"><label class="block text-sm font-semibold mb-1" for="reason">Reason for visit</label><textarea id="reason" rows="3" class="w-full border border-slate-300 rounded-lg px-3 py-2.5" placeholder="Symptoms or reason for consultation"></textarea></div>
+  </div>
+  <input id="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute -left-[9999px]">
+  <label class="flex gap-3 text-sm text-slate-600"><input id="consent" type="checkbox" class="mt-1"><span>I agree that JIC may store these details to arrange and manage my appointment, and may contact me about it.</span></label>
+  <p id="err" class="text-sm text-red-600 font-medium" role="alert"></p>
+  <button id="go" class="w-full bg-jic-navy hover:bg-blue-900 text-white font-bold py-3 rounded-xl transition">Request appointment</button>
+  <p class="text-xs text-slate-500">Your request is not final until our staff confirm it. Not for emergencies.</p>
+</form>
+
+<div id="done" class="hidden bg-white rounded-2xl border border-slate-200 shadow-md p-8 text-center" tabindex="-1">
+  <h2 class="text-2xl font-extrabold text-jic-emerald text-emerald-600">Request received</h2>
+  <p class="mt-3 text-slate-600">Please keep your reference number. Our staff will contact you to confirm.</p>
+  <div id="summary" class="mt-5 bg-blue-50 rounded-xl p-5 text-left inline-block leading-7"></div>
+  <div class="mt-6 flex gap-3 justify-center flex-wrap"><button onclick="print()" class="border border-jic-blue text-jic-blue font-semibold px-5 py-2.5 rounded-xl">Print</button><a href="book-appointment.html" class="bg-jic-navy text-white font-semibold px-5 py-2.5 rounded-xl">Book another</a></div>
+</div>
+</main>
+
+<script>
+const $=i=>document.getElementById(i), DAY=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]; let slot="", docs=[];
+const pk=()=>new Date(Date.now()+5*36e5).toISOString().slice(0,10);
+const lab=t=>{let h=+t.slice(0,2);return (h%12||12)+":"+t.slice(3)+(h>=12?" PM":" AM")};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+fetch("/api/doctors").then(r=>r.json()).then(d=>{
+  docs=d.doctors; $("doctor").innerHTML='<option value="">Select a doctor</option>'+docs.map(x=>`<option value="${x.id}">${esc(x.name)} - ${esc(x.title)}</option>`).join("");
+  const pre=new URLSearchParams(location.search).get("doctor"); if(docs.some(x=>x.id===pre)) $("doctor").value=pre;
+  $("date").min=pk(); $("date").max=new Date(Date.now()+5*36e5+d.opd.maxDaysAhead*864e5).toISOString().slice(0,10);
+  $("days").textContent="(OPD "+d.opd.days.map(n=>DAY[n]).join(", ")+")"; load();
+}).catch(()=>{$("doctor").innerHTML='<option value="">Could not load doctors</option>'});
+async function load(){
+  slot=""; $("slots").innerHTML="";
+  if(!$("doctor").value||!$("date").value){$("hint").textContent="Select a doctor and date to see available times.";return}
+  $("hint").textContent="Checking availability...";
+  const r=await (await fetch(`/api/availability?doctor=${$("doctor").value}&date=${$("date").value}`)).json(), free=r.slots.filter(s=>s.free).length;
+  $("hint").textContent=!r.slots.length?"No OPD on this day. Please choose another date.":free?free+" times available.":"No times left on this date. Please try another day.";
+  $("slots").innerHTML=r.slots.map(s=>`<button type="button" data-t="${s.t}" ${s.free?"":"disabled"} class="slot border rounded-lg py-2 text-sm ${s.free?"border-slate-300 hover:border-jic-blue":"bg-slate-100 text-slate-400 line-through cursor-not-allowed"}">${lab(s.t)}</button>`).join("");
+}
+$("doctor").onchange=$("date").onchange=load;
+$("slots").onclick=e=>{const b=e.target.closest(".slot");if(!b||b.disabled)return;slot=b.dataset.t;
+  document.querySelectorAll(".slot").forEach(x=>x.classList.remove("bg-jic-blue","text-white"));b.classList.add("bg-jic-blue","text-white")};
+$("f").onsubmit=async e=>{
+  e.preventDefault(); $("err").textContent="";
+  if(!$("doctor").value||!$("date").value||!slot) return $("err").textContent="Please choose a doctor, date and time.";
+  $("go").disabled=true; $("go").textContent="Sending...";
+  const body={doctor:$("doctor").value,date:$("date").value,time:slot,website:$("website").value,consent:$("consent").checked};
+  ["name","phone","gender","age","visitType","mrNumber","cnic","city","email","reason"].forEach(k=>body[k]=$(k).value);
+  try{
+    const r=await fetch("/api/book",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}), d=await r.json();
+    if(!r.ok){$("err").textContent=d.error||"Something went wrong.";if(r.status===409)load();return}
+    $("summary").innerHTML=`<b>Reference:</b> ${esc(d.ref)}<br><b>Doctor:</b> ${esc(d.doctor)}<br><b>Date:</b> ${esc(d.date)}<br><b>Time:</b> ${lab(d.time)}<br><b>Status:</b> Pending confirmation`;
+    $("f").classList.add("hidden"); $("done").classList.remove("hidden"); $("done").focus();
+  }catch{$("err").textContent="Connection problem. Please try again."}
+  finally{$("go").disabled=false;$("go").textContent="Request appointment"}
+};
+</script>
+</body></html>
